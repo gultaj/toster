@@ -1,0 +1,14 @@
+* {
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif !important;
+}
+.question-title a {
+  color: #333;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 700;
+}
+.question-title a:hover {
+  color: #2d72d9;
+  text-decoration: underline;
+}

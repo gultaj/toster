@@ -1,0 +1,36 @@
+.page__body
+	header.question__header
+		.user-summary
+			a(href="#").user-summary__avatar: img(src="img/user1.png")
+			.user-summary__desc
+				a(href="#").user-summary__name Username
+				span.user-summary__nickname @username
+				.user-summary__about About user
+		.question__header_subscribers
+			ul.subscribers-list
+				li.subscribers-list__item
+					a(href="#").subscribers-list__user
+						img(src="img/user3.png")
+				li.subscribers-list__item.subscribers-list__item_more
+					a(href="#").btn_dott
+	.question__body
+		ul.question__tags
+			li.question__tags-item
+				i.icon-tag
+				a(href='#') Gulp
+			li.question__tags-item: a(href="#") JavaScript
+		h2.question__title Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+		p.question__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, totam quisquam inventore fugiat? Dolore dolor odit laborum. Dolores tempore laudantium, aut facilis cupiditate expedita, commodi accusantium facere, aliquam veritatis numquam.
+		p.question__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, totam quisquam inventore fugiat? Dolore dolor odit laborum. Dolores tempore laudantium, aut facilis cupiditate expedita, commodi accusantium facere, aliquam veritatis numquam.
+		ul.question__attr
+			li Вопрос задан N часов назад
+			li m просмотров
+		.button-group
+			a(href="#").btn_subscribe Подписаться
+				span.subscribe_count 5
+			a(href="#").btn_comment-toogle: span Комментировать
+			.dropdown.dropdown_settings
+				button.btn.btn_settings.btn_dott
+			.dropdown.dropdown_share: a(href="#"): button.btn.btn_share.icon-share
+	.question__additional
+		include section.jade

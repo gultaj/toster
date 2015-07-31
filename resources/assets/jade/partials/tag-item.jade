@@ -1,0 +1,51 @@
+header.page-header
+	.page-header__info
+		.page-header__image
+			i.icon-tag
+		h1.page-header__title JavaScript
+	.page-header__stats
+		ul.inline-list.inline-list_tags
+			li: a(href="#").mini-counter
+				.mini-counter__count 25623
+				.mini-counter__value подписчиков
+			li: a(href="#").mini-counter
+				.mini-counter__count 1254 
+				.mini-counter__value вопросов
+			li: a(href="#").mini-counter
+				.mini-counter__count.mini-counter__count_green 46% 
+				.mini-counter__value решено
+	.page-header__buttons
+		a(href="#").btn_subscribe Подписаться
+		.dropdown.dropdown_settings
+			button.btn.btn_settings.btn_dott
+nav.page__tabs
+	ul.tabs
+		li: a(href='#').main-menu__item Информация
+		li.current: span.main-menu__item Новые вопросы
+		li: a(href='#').main-menu__item Интересные
+		li: a(href='#').main-menu__item Без ответа
+		li: a(href='#').main-menu__item Подписчики
+.page__body
+	ul.content-list
+		- var n = 0
+		while n < 10
+			- n++
+			li.content-list__item.question
+				.question__wrap
+					.question__content
+						ul.question__tags.question__tags_short
+							li.question__tags-item 
+								i.icon-tag
+								a(href='#') Gulp
+							li.question__tags-item_more +2 ещё
+						h2.question__title: a(href='question.html').question__title-link Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						ul.question__attr
+							li n подписчиков
+							li когда
+							li m просмотров
+				.question__answers-count
+					a(href='#').answer-counter
+						.answer-counter__count 8
+						.answer-counter__value ответов
+
+	include pagination.jade

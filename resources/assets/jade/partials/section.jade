@@ -1,0 +1,25 @@
+section.section.section_answers
+	header.section-header
+		h3.section-header__title Ответы на вопрос (2)
+	ul.list-content.list-content_answers
+		- var n = 0
+		while n < 4
+			- n++
+			li.list-content__item
+				.user-summary
+					a(href="#").user-summary__avatar: img(src="img/user1.png")
+					.user-summary__desc
+						a(href="#").user-summary__name Username
+						span.user-summary__nickname @username
+						.user-summary__about About user
+				.answer__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, totam quisquam inventore fugiat? Dolore dolor odit laborum. Dolores tempore laudantium, aut facilis cupiditate expedita, commodi accusantium facere, aliquam veritatis numquam.
+					ul.question__attr
+						li Вопрос задан N часов назад
+					.button-group
+						a(href="#").btn_like Нравится
+						a(href="#").btn_comment-toogle: span 5 комментариев
+						.dropdown.dropdown_settings
+							button.btn.btn_settings.btn_dott
+						.dropdown.dropdown_share: a(href="#"): button.btn.btn_share.icon-share
+
+					include comments.jade

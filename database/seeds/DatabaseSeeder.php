@@ -12,10 +12,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        ini_set('memory_limit','1024M');
         Model::unguard();
 
-        // $this->call(UserTableSeeder::class);
+        $this->call(TagsTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
 
+        $this->call(QuestionsTableSeeder::class);
+        $this->call(AnswersTableSeeder::class);
+        
+        $this->call(AnswerLikesTableSeeder::class);
+
+        $this->call(QuestionTagsTableSeeder::class);
+
+        $this->call(CommentsTableSeeder::class);
+        $this->call(SubscribesTableSeeder::class);
+        
         Model::reguard();
     }
 }

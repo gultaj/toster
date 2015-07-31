@@ -1,0 +1,14 @@
+.sidebar 
+	dl.sidebar__panel
+		dt.sidebar__panel_title Самое интересное за 24 часа    
+		dd.sidebar__panel_content
+			- var n =0
+			ul.sidebar-list
+				while n < 4
+					li
+						a(href="#").sidebar-list_title Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						ul.question__attr
+							li n подписчиков
+							li m ответов
+					- n++
+				

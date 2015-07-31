@@ -1,0 +1,139 @@
+$base = #eef1f4
+$base-hover = darken($base, 5%)
+$base-dark = darken($base, 10%)
+h2
+	margin 0
+a
+	text-decoration none
+	color #333
+	
+ul
+	list-style none
+	padding 0
+	margin 0
+	li
+		display inline-block
+dd, dl
+	margin 0
+
+html
+	height 100%
+body
+	font-family 'PT Sans', sans-serif
+	height 100%
+	
+.out
+	max-width 1440px
+	margin auto
+	height 100%
+	min-height 100%
+	position relative
+	
+.body
+	margin-left 250px
+	height 100%
+	min-height 100%
+	position relative
+	&__wrapper
+		min-height 100%
+		position relative
+		height auto
+		margin-bottom -45px
+.content
+	height 100%
+	width 100%
+	//clear left
+	overflow auto
+	&__wrapper
+		float left
+		width 100%
+		height auto
+		min-height 100%
+		&:before
+			content ''
+			position absolute
+			background #eef1f4
+			top 0
+			bottom 0
+			display block
+			width 300px
+			right 0
+			z-index 1
+/*[class^="icon-"]:before, [class*=" icon-"]:before*/
+	/*margin-right .8em*/
+	
+
+.btn_dott:before
+	content '...'
+	font-family "Times New Roman"
+	font-weight 700
+	line-height 0
+	display inline-block
+	font-size 1.7em
+	margin-top 10px
+.btn
+	background none
+	border none
+$btn_subscr = #2d72d9
+.button-group
+	@extend $clearfix
+	padding-top 15px
+.btn_subscribe
+	float left
+	margin-right 10px
+	border-radius 3px
+	border 1px solid $btn_subscr
+	color $btn_subscr
+	padding 5px 8px
+	font-size .85em
+	font-weight 700
+	.subscribe_count
+		margin-left 10px
+		border-left 1px solid $btn_subscr
+		padding-left 7px
+	&:hover
+		border-color darken($btn_subscr, 20%)
+		color @border-color
+	.subscribe_count
+		border-color darken($btn_subscr, 20%)
+.btn_settings, .btn_share
+	padding 5px 8px
+	border-radius 3px
+	color #9099a3
+	&:before
+		vertical-align top
+		margin-top 3px
+	&:hover
+		background #f1f2f3
+.btn_share:before
+	margin-top 2px
+.btn_comment-toogle
+	float left
+	color #a5acb3
+	font-size .85em
+	padding 5px 8px
+	font-weight 700
+	&:hover>span
+		border-bottom 1px dotted #a5acb3
+.btn_comment
+	float left
+	color #a5acb3
+	font-size .85em
+	padding 5px 8px
+	font-weight 700
+	&:hover>span
+		border-bottom 1px solid #a5acb3
+
+.dropdown_settings
+	float right
+.dropdown_share
+	float right
+
+.list-content
+	&__item
+		width 100%
+		display block
+		padding 30px 0
+		border-bottom 1px solid #dfe5eb
+		&:last-child
+			border-bottom none

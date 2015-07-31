@@ -1,0 +1,120 @@
+
+.question__tags
+	margin-bottom 5px
+	
+	&_short
+	&_short > &-item			
+		&_more
+			color #a5acb3
+			font-size .75em
+			font-weight 700
+			text-transform uppercase
+		&:before
+			display none
+		a
+			margin-right 5px
+		i
+			/*margin-right -5px*/
+		
+	&-item		
+		&:before
+			content '\2022'
+			color #c8ced4
+			font-size 10px
+			position relative
+			top -1px
+			/*margin-right 4px*/
+		&:first-child:before
+			display none
+		i
+			color #2d72d9
+			font-size .75em
+			/*margin-right -5px*/
+		a
+			color #9C7FDA
+			text-transform uppercase
+			font-size .75em
+			font-weight 700
+			
+			white-space nowrap
+			&:hover
+				text-decoration underline
+		
+.question__title
+	margin-bottom 5px
+	font-weight 700
+	font-size 1.3em
+	color #333
+	&-link
+		
+		&:hover
+			text-decoration underline
+			color #2d72d9
+.question__attr
+	
+	li
+		color #a5acb3
+		font-size .9em
+		&:before
+			margin-right 4px
+			content '\2022'
+			color #c8ced4
+			font-size 10px
+			position relative
+			top -1px
+		&:first-child:before
+			display none
+.question
+	@extend $clearfix
+	padding 25px 0 30px
+	border-bottom 1px solid $base
+	display block
+.question__wrap
+	height 100%
+	position relative
+	float left
+	width 100%
+.question__answers-count
+	float left
+	margin-left -60px
+	width 60px
+	text-align center
+	
+.answer-counter
+	position relative
+	display inline-block
+	color #9099a3
+	margin-top 20px
+	&__count
+		font-weight 700
+		font-size 1.35em
+		color #b2bac2
+	&_solved, &_solved>&__count
+		color #65c178 !important
+	.icon-ok
+		/*margin-right -10px*/
+		font-size .8em
+.question__content
+	margin-right 60px
+	padding-right 20px
+.content-list
+	margin 0
+	
+.pagination
+	text-align center
+	font-size .9em
+	padding-top 20px
+	padding-bottom 25px
+	li
+		vertical-align middle
+	&__link
+		color #2d72d9
+		font-weight 700
+		display block
+		padding 0 10px
+	a:hover
+		text-decoration underline
+	&__current
+		.pagination__link
+			font-size 1.2em
+			color #333

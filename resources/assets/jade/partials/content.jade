@@ -1,0 +1,31 @@
+header.page-header
+	h1.page-header__title Все вопросы
+nav.page__tabs
+	ul.tabs
+		li.current: span.main-menu__item Новые вопросы
+		li: a(href='#').main-menu__item Интересные
+		li: a(href='#').main-menu__item Без ответа
+.page__body
+	ul.content-list
+		- var n = 0
+		while n < 10
+			- n++
+			li.content-list__item.question
+				.question__wrap
+					.question__content
+						ul.question__tags.question__tags_short
+							li.question__tags-item 
+								i.icon-tag
+								a(href='tag.html') Gulp
+							li.question__tags-item_more +2 ещё
+						h2.question__title: a(href='question.html').question__title-link Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						ul.question__attr
+							li n подписчиков
+							li когда
+							li m просмотров
+				.question__answers-count
+					a(href='#').answer-counter
+						.answer-counter__count 8
+						.answer-counter__value ответов
+
+	include pagination.jade

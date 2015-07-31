@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Toster</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&amp;amp;subset=latin,cyrillic">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontello.css">
+  </head>
+  <body>
+    <div class="out">
+      <aside class="navbar"> 
+        <div class="navbar__logo"><a href="#">Toster</a></div>
+        <div class="panel"><a href="#" class="panel-user"><i class="icon-lock-open-alt"></i> Войти на сайт</a></div>
+        <ul class="main-menu">
+          <li class="current"><a href="#"><i class="icon-list-bullet"></i> Все вопросы</a></li>
+          <li><a href="#"><i class="icon-tags"></i> Все теги</a></li>
+          <li><a href="#"><i class="icon-user"></i> Пользователи</a></li>
+        </ul>
+      </aside>
+      <div class="body">
+        <div class="body__wrapper">
+          <header class="body__header">
+            <div class="body__header_wrap">
+              <form class="search-form">
+                <div class="search-form__wrap">
+                  <div class="search-form__wrap_fluid">
+                    <input type="text" placeholder="Найти вопрос, ответ, тег или пользователя" class="search-form__input">
+                  </div>
+                </div>
+              </form>
+              <div class="body__header_add"><a href="#" class="body__header_add-button">Задать вопрос</a></div>
+            </div>
+          </header>
+          <div class="content">
+            <div class="content__wrapper">
+              <div class="page">
+                <div class="page__body">
+                  <header class="question__header">
+                    <div class="user-summary"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span>
+                        <div class="user-summary__about">About user</div>
+                      </div>
+                    </div>
+                    <div class="question__header_subscribers">
+                      <ul class="subscribers-list">
+                        <li class="subscribers-list__item"><a href="#" class="subscribers-list__user"><img src="img/user3.png"></a></li>
+                        <li class="subscribers-list__item subscribers-list__item_more"><a href="#" class="btn_dott"></a></li>
+                      </ul>
+                    </div>
+                  </header>
+                  <div class="question__body">
+                    <ul class="question__tags">
+                      <li class="question__tags-item"><i class="icon-tag"></i><a href="#">Gulp</a></li>
+                      <li class="question__tags-item"><a href="#">JavaScript</a></li>
+                    </ul>
+                    <h2 class="question__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+                    <p class="question__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, totam quisquam inventore fugiat? Dolore dolor odit laborum. Dolores tempore laudantium, aut facilis cupiditate expedita, commodi accusantium facere, aliquam veritatis numquam.</p>
+                    <p class="question__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, totam quisquam inventore fugiat? Dolore dolor odit laborum. Dolores tempore laudantium, aut facilis cupiditate expedita, commodi accusantium facere, aliquam veritatis numquam.</p>
+                    <ul class="question__attr">
+                      <li>Вопрос задан N часов назад</li>
+                      <li>m просмотров</li>
+                    </ul>
+                    <div class="button-group"><a href="#" class="btn_subscribe">Подписаться<span class="subscribe_count">5</span></a><a href="#" class="btn_comment-toogle"><span>Комментировать</span></a>
+                      <div class="dropdown dropdown_settings">
+                        <button class="btn btn_settings btn_dott"></button>
+                      </div>
+                      <div class="dropdown dropdown_share"><a href="#">
+                          <button class="btn btn_share icon-share"></button></a></div>
+                    </div>
+                  </div>
+                  <div class="question__additional">
+                    <section class="section section_answers">
+                      <header class="section-header">
+                        <h3 class="section-header__title">Ответы на вопрос (2)</h3>
+                      </header>
+                      <ul class="list-content list-content_answers">
+                        <li class="list-content__item">
+                          <div class="user-summary"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                            <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span>
+                              <div class="user-summary__about">About user</div>
+                            </div>
+                          </div>
+                          <div class="answer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, totam quisquam inventore fugiat? Dolore dolor odit laborum. Dolores tempore laudantium, aut facilis cupiditate expedita, commodi accusantium facere, aliquam veritatis numquam.
+                            <ul class="question__attr">
+                              <li>Вопрос задан N часов назад</li>
+                            </ul>
+                            <div class="button-group"><a href="#" class="btn_like">Нравится</a><a href="#" class="btn_comment-toogle"><span>5 комментариев</span></a>
+                              <div class="dropdown dropdown_settings">
+                                <button class="btn btn_settings btn_dott"></button>
+                              </div>
+                              <div class="dropdown dropdown_share"><a href="#">
+                                  <button class="btn btn_share icon-share"></button></a></div>
+                            </div>
+                            <div class="answer__comments">
+                              <ul class="list-content list-content_comments">
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-content__item">
+                          <div class="user-summary"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                            <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span>
+                              <div class="user-summary__about">About user</div>
+                            </div>
+                          </div>
+                          <div class="answer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, totam quisquam inventore fugiat? Dolore dolor odit laborum. Dolores tempore laudantium, aut facilis cupiditate expedita, commodi accusantium facere, aliquam veritatis numquam.
+                            <ul class="question__attr">
+                              <li>Вопрос задан N часов назад</li>
+                            </ul>
+                            <div class="button-group"><a href="#" class="btn_like">Нравится</a><a href="#" class="btn_comment-toogle"><span>5 комментариев</span></a>
+                              <div class="dropdown dropdown_settings">
+                                <button class="btn btn_settings btn_dott"></button>
+                              </div>
+                              <div class="dropdown dropdown_share"><a href="#">
+                                  <button class="btn btn_share icon-share"></button></a></div>
+                            </div>
+                            <div class="answer__comments">
+                              <ul class="list-content list-content_comments">
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-content__item">
+                          <div class="user-summary"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                            <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span>
+                              <div class="user-summary__about">About user</div>
+                            </div>
+                          </div>
+                          <div class="answer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, totam quisquam inventore fugiat? Dolore dolor odit laborum. Dolores tempore laudantium, aut facilis cupiditate expedita, commodi accusantium facere, aliquam veritatis numquam.
+                            <ul class="question__attr">
+                              <li>Вопрос задан N часов назад</li>
+                            </ul>
+                            <div class="button-group"><a href="#" class="btn_like">Нравится</a><a href="#" class="btn_comment-toogle"><span>5 комментариев</span></a>
+                              <div class="dropdown dropdown_settings">
+                                <button class="btn btn_settings btn_dott"></button>
+                              </div>
+                              <div class="dropdown dropdown_share"><a href="#">
+                                  <button class="btn btn_share icon-share"></button></a></div>
+                            </div>
+                            <div class="answer__comments">
+                              <ul class="list-content list-content_comments">
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-content__item">
+                          <div class="user-summary"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                            <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span>
+                              <div class="user-summary__about">About user</div>
+                            </div>
+                          </div>
+                          <div class="answer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, totam quisquam inventore fugiat? Dolore dolor odit laborum. Dolores tempore laudantium, aut facilis cupiditate expedita, commodi accusantium facere, aliquam veritatis numquam.
+                            <ul class="question__attr">
+                              <li>Вопрос задан N часов назад</li>
+                            </ul>
+                            <div class="button-group"><a href="#" class="btn_like">Нравится</a><a href="#" class="btn_comment-toogle"><span>5 комментариев</span></a>
+                              <div class="dropdown dropdown_settings">
+                                <button class="btn btn_settings btn_dott"></button>
+                              </div>
+                              <div class="dropdown dropdown_share"><a href="#">
+                                  <button class="btn btn_share icon-share"></button></a></div>
+                            </div>
+                            <div class="answer__comments">
+                              <ul class="list-content list-content_comments">
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sidebar"> 
+              <dl class="sidebar__panel">
+                <dt class="sidebar__panel_title">Самое интересное за 24 часа    </dt>
+                <dd class="sidebar__panel_content">
+                  <ul class="sidebar-list">
+                    <li><a href="#" class="sidebar-list_title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                      <ul class="question__attr">
+                        <li>n подписчиков</li>
+                        <li>m ответов</li>
+                      </ul>
+                    </li>
+                    <li><a href="#" class="sidebar-list_title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                      <ul class="question__attr">
+                        <li>n подписчиков</li>
+                        <li>m ответов</li>
+                      </ul>
+                    </li>
+                    <li><a href="#" class="sidebar-list_title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                      <ul class="question__attr">
+                        <li>n подписчиков</li>
+                        <li>m ответов</li>
+                      </ul>
+                    </li>
+                    <li><a href="#" class="sidebar-list_title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                      <ul class="question__attr">
+                        <li>n подписчиков</li>
+                        <li>m ответов</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <footer class="footer"> 
+          <div class="footer__wrapper">
+            <ul class="footer__menu">
+              <li><a href="#">&copy; TM</a></li>
+              <li><a href="#">О сайте</a></li>
+              <li><a href="#">Обратная связь</a></li>
+              <li><a href="#">Реклама</a></li>
+              <li><a href="#">Блог</a></li>
+            </ul>
+            <ul class="social">
+              <li><a href="#"><i class="icon-twitter"></i></a></li>
+              <li><a href="#"><i class="icon-facebook"></i></a></li>
+              <li><a href="#"><i class="icon-vkontakte"></i></a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

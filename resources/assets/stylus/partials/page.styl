@@ -1,0 +1,50 @@
+$pad
+	padding 0 30px
+
+.page
+	margin-right 300px
+	// float left
+	position relative
+	min-height 100%
+	height auto
+	margin-bottom 44px
+	
+	&-header
+		@extend $pad
+		padding-top 20px
+		margin-bottom 20px
+		&__title
+			margin 0
+			font-size 1.5em
+	&__tabs
+		
+		@extend $pad
+		
+		ul
+			border-top 1px solid $base
+			border-bottom @border-top
+			margin 0
+			li 
+				padding 0 15px
+				
+				.main-menu__item
+					display block
+					padding 12px 0 10px
+					color #b0b8bd
+					text-transform uppercase
+					font-size .8em
+					font-weight 700
+					&:hover
+						color #333
+				&:first-child
+					padding-left 0
+				&.current .main-menu__item
+					border-bottom 2px solid #333
+					color #333
+					cursor default
+	&__body
+		@extend $pad
+					
+				
+		
+			

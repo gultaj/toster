@@ -1,0 +1,53 @@
+.body__header
+	//@extend $clearfix
+	position relative
+	color #fff
+	height 4em
+	background #4f5a6e
+	z-index 2
+	&_wrap
+		float left
+		width 100%
+	.search-form
+		float left
+		position relative
+		width 100%
+		line-height 4
+		&__wrap
+			float left
+			position relative
+			width 100%
+			display block
+			&_fluid
+				margin-right 300px
+				width auto
+				padding 0 30px
+		&__input
+			border-radius 5px
+			width 100%
+			background #424b5f
+			border none
+			padding 10px 15px
+			outline none
+			color #a7b3cb
+			font-size .85em
+			&::-webkit-input-placeholder 
+				text-align center
+				color #a7b3cb
+	.body__header_add
+		float right
+		width 300px
+		margin-left -300px
+		line-height 4
+		text-align center
+		border-left 1px solid #424b5f
+		&-button
+			background $btn = #65c178
+			border-radius 5px
+			padding 10px 40px
+			color #fff
+			font-weight 700
+			font-size .9em
+			position relative
+			&:hover
+				background darken($btn, 20%)

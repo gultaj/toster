@@ -1,0 +1,20 @@
+.answer__comments
+	ul.list-content.list-content_comments
+		- var m = 0
+		while m < 3
+			- m++
+			li.list-content__item.comment
+				.comment__header
+					.user-summary.user-summary_comment
+						a(href="#").user-summary__avatar: img(src="img/user1.png")
+						.user-summary__desc
+							a(href="#").user-summary__name Username
+							span.user-summary__nickname @username
+				.comment__body
+					.comment__body_inner
+						.comment__text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!
+						.comment__date Написано n часов назад
+						.button-group.button-group_comment
+							a(href="#").btn_answer Ответить
+							.dropdown.dropdown_settings
+								button.btn.btn_settings.btn_dott

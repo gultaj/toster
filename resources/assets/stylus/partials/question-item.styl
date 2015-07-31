@@ -1,0 +1,78 @@
+.page__body
+	padding 0 30px
+	// width 100%
+.question__header
+	padding 15px 0
+	border-bottom 1px solid #f0f0f0
+	margin-bottom 20px
+	min-width 100%
+	display table
+	table-layout fixed
+	&_subscribers
+		display table-cell
+		width 55%
+
+img
+	display block
+	max-width 100%
+.user-summary
+	display table-cell
+	vertical-align middle
+	white-space nowrap
+	&__avatar
+		position relative
+		width 35px
+		height @width
+		border-radius 50%
+		display inline-block
+		margin-right 10px
+		vertical-align middle
+		overflow hidden
+		z-index 2
+	&__desc
+		display inline-block
+		vertical-align middle
+		width 100%
+		padding-left 45px
+		left -45px
+		position relative
+		z-index 1
+	&__name
+		font-weight 700
+		margin-right 5px
+	&__nickname
+		font-size .9em
+		color #9099a3
+	&__about
+		font-size .9em
+		color #9099a3
+	a:hover
+		text-decoration underline
+.subscribers-list
+	text-align right
+	&__user
+		width 35px
+		height @width
+		border-radius 50%
+		display inline-block
+		margin-right 10px
+		vertical-align middle
+	&__item
+		width 35px
+		height @width
+		vertical-align middle
+		text-align center
+		margin-left 5px
+		&_more
+			border-radius 50%
+			border 1px solid #9099a3
+			a
+				color #9099a3				
+				
+				
+.question__body
+	.question__title
+		font-size 1.5em
+.question__text
+	line-height 1.5
+	margin-bottom 0
