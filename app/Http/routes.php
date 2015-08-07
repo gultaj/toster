@@ -26,6 +26,7 @@ Route::get('/q/{id}', ['as' => 'q', 'uses' => 'QuestionsController@show'])->wher
 Route::group(['namespace' => 'Auth'], function()
 {
 	get('auth/login', ['as' => 'auth.login', 'uses' => 'AuthController@getLogin']);
+	post('auth/login', ['as' => 'auth.login', 'uses' => 'AuthController@postLogin']);
 });
 
 get('/tag/{slug}/questions', ['as' => 'tag', 'uses' => 'TagsController@questions']);
@@ -47,8 +48,6 @@ get('answer', ['as' => 'answer', 'uses' => 'AnswersController@index']);
 
 get('test', function() {
 
-	$list = App\Answer::item()->limit(5)->get();
-
-	dd($list);
+	Auth::logout();
 
 });

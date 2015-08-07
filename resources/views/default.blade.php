@@ -7,8 +7,12 @@
 </head>
 <body>
 <div class="out">
-
-    @include('partials.nav.guest')
+    
+    @if (Auth::check())
+        @include('partials.nav.user')
+    @else
+        @include('partials.nav.guest')
+    @endif
 
     <div class="body">
         <div class="body__wrapper">

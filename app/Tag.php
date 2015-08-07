@@ -26,6 +26,11 @@ class Tag extends Model
 			->groupBy('tag_id');
 	}
 
+    public function answers()
+    {
+        return $this->hasManyThrough('App\Answer', 'App\Question');
+    }
+
 	public function getSolvedQuestionsAttribute()
     {
         if (! $this->relationLoaded('solvedQuestions'))

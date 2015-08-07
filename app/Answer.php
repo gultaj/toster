@@ -16,13 +16,6 @@ class Answer extends Model
 		return $this->morphMany('App\Comment', 'commentable');
 	}
 
-	public function commentsCount()
-	{
-		return $this->comments()
-			->selectRaw('commentable_id, count(*) as count')
-			->groupBy('commentable_id');
-	}
-
 	public function user()
 	{
 		return $this->belongsTo('App\User');
@@ -33,10 +26,14 @@ class Answer extends Model
 		return $this->belongsToMany('App\User', 'answer_likes')->withTimestamps();
 	}
 
+	public function commentsCount()
+	{
+		return $this->comments()->selectRaw('commentable_id, count(*) as count')->groupBy('commentable_id');
+	}
+
 	public function getCommentsCountAttribute()
 	{
-		if (! $this->relationLoaded('commentsCount'))
-			$this->load('commentsCount');
+		if (! $this->relationLoaded('commentsCount')) $this->load('commentsCount');
 
 		$related = $this->getRelation('commentsCount')->first();
 		
@@ -49,11 +46,5 @@ class Answer extends Model
 
 		return $count ? $count .' '. count_comments($count) : null;
 	}
-
-	public function scopeItem($query)
-	{
-		return $query->with('user', 'comments', 'comments.user', 'likes');
-	}
-
 
 }
