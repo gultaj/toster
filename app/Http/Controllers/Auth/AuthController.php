@@ -38,7 +38,7 @@ class AuthController extends Controller
 	public function postLogin(\App\Http\Requests\LoginUserRequest $request)
 	{
 		if (\Auth::attempt($request->except('_token'), true))
-			return redirect()->intendent('home');
+			return redirect()->intended('/');
 
 		return redirect()->back()->withInput();
 	}
