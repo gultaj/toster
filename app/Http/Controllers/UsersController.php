@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -28,14 +28,14 @@ class UsersController extends Controller
 	 */
 	public function show($nickname)
 	{
-		$user = \App\User::where('nickname', $nickname)->first();
+		$user = User::where('nickname', $nickname)->first();
 
 		return view('users.show', compact('user'))->with('menu_items', $this->buildMenu($user));
 	}
 
 	public function getQuestions($nickname)
 	{
-		$user = \App\User::where('nickname', $nickname)->first();
+		$user = User::where('nickname', $nickname)->first();
 		$questions = $user->questions()->with('tags', 'answersCount', 'subscribers')->paginate(15);
 
 		return view('users.questions', compact('questions', 'user'))->with('menu_items', $this->buildMenu($user));
@@ -44,7 +44,7 @@ class UsersController extends Controller
 
 	public function getAnswers($nickname)
 	{
-		$user = \App\User::where('nickname', $nickname)->first();
+		$user = User::where('nickname', $nickname)->first();
 
 		$answers = $user->answers()->with('question', 'commentsCount', 'likes')->paginate(15);
 

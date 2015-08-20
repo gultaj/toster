@@ -11,14 +11,14 @@ class AnswersTableSeeder extends Seeder
      */
     public function run()
     {
-        App\Answer::truncate();
+        App\Models\Answer::truncate();
 
-        $users = App\User::all();
+        $users = App\Models\User::all();
 
-        App\Question::all()->each(function($question) use ($users) {
+        App\Models\Question::all()->each(function($question) use ($users) {
 
         	for ($i = 0, $count = rand(0, 5); $i < $count; $i++) {         		
-                $question->answers()->save($answer = factory('App\Answer')->create());
+                $question->answers()->save($answer = factory('App\Models\Answer')->create());
                 $question->update(['is_resolved' => $answer->is_solution]);
                 $answer->user()->associate($users->random())->save();
         	}

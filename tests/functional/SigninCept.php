@@ -6,7 +6,7 @@ $I->amOnRoute('auth.login');
 $I->see('Вход');
 // $I->fillFild(['name' => 'email'], )
 
-$user = factory('App\User')->create();
+$user = factory('App\Models\User')->create();
 
 $I->seeRecord('users', [
     'nickname' => $user->nickname

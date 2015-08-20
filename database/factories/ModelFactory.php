@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(App\User::class, function ($faker) {
+$factory->define(App\Models\User::class, function ($faker) {
 
     $faker->addProvider(new Faker\Provider\ru_RU\Text($faker));
     $faker->addProvider(new Faker\Provider\ru_RU\Person($faker));
@@ -29,7 +29,7 @@ $factory->define(App\User::class, function ($faker) {
     ];
 });
 
-$factory->define(App\Question::class, function($faker) {
+$factory->define(App\Models\Question::class, function($faker) {
 
     $faker->addProvider(new Faker\Provider\ru_RU\Text($faker));
     return [
@@ -39,7 +39,7 @@ $factory->define(App\Question::class, function($faker) {
     ];
 });
 
-$factory->define(App\Answer::class, function($faker) {
+$factory->define(App\Models\Answer::class, function($faker) {
 
     $faker->addProvider(new Faker\Provider\ru_RU\Text($faker));
     return [
@@ -48,7 +48,7 @@ $factory->define(App\Answer::class, function($faker) {
     ];
 });
 
-$factory->define(App\Tag::class, function($faker) {
+$factory->define(App\Models\Tag::class, function($faker) {
 
     $faker->addProvider(new Faker\Provider\ru_RU\Text($faker));
     return [
@@ -58,7 +58,7 @@ $factory->define(App\Tag::class, function($faker) {
     ];
 });
 
-$factory->define(App\Comment::class, function($faker) {
+$factory->define(App\Models\Comment::class, function($faker) {
 
     $faker->addProvider(new Faker\Provider\ru_RU\Text($faker));
     return [
@@ -66,7 +66,7 @@ $factory->define(App\Comment::class, function($faker) {
     ];
 });
 
-$factory->define(App\Subscribe::class, function($faker) {
+$factory->define(App\Models\Subscribe::class, function($faker) {
 
     return [];
 });

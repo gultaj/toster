@@ -11,8 +11,8 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
-    	App\Tag::truncate();
+    	App\Models\Tag::truncate();
     	
-        factory('App\Tag', 20)->create();
+        factory('App\Models\Tag', 20)->create();
     }
 }

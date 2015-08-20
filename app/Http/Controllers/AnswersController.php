@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use \App\Models\Answer;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +16,7 @@ class AnswersController extends Controller
      */
     public function index(Request $request)
     {
-        $question = \App\Answer::find($request->answer_id)->question()->full()->first();
+        $question = Answer::find($request->answer_id)->question()->full()->first();
 
         return view('questions.show', compact('question'));
     }

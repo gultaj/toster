@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Question;
-use App\Tag;
+use App\Models\Question;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

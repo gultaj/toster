@@ -13,9 +13,9 @@ class AnswerLikesTableSeeder extends Seeder
     {
         DB::table('answer_likes')->truncate();
 
-        $users = App\User::get();
+        $users = App\Models\User::get();
 
-        App\Answer::all()->each(function($answer) use ($users) {
+        App\Models\Answer::all()->each(function($answer) use ($users) {
 
         	if (rand(0, 10) < 6) return;
 

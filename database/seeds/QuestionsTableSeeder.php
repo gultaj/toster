@@ -12,11 +12,11 @@ class QuestionsTableSeeder extends Seeder
     public function run()
     {
 
-        App\Question::truncate();
+        App\Models\Question::truncate();
 
-        $users = App\User::all();
+        $users = App\Models\User::all();
 
-        factory('App\Question', 200)->create()->each(function($question) use ($users) {
+        factory('App\Models\Question', 200)->create()->each(function($question) use ($users) {
 
             $question->user()->associate($users->random())->save();
 

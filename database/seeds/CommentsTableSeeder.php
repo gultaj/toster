@@ -11,15 +11,15 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-    	App\Comment::truncate();
+    	App\Models\Comment::truncate();
 
-    	$list = collect()->merge(App\Question::all())->merge(App\Answer::all());
+    	$list = collect()->merge(App\Models\Question::all())->merge(App\Models\Answer::all());
 
-        $users = App\User::all();
+        $users = App\Models\User::all();
 
     	$list->each(function($item) use ($users) {
 			for ($i = 0, $count = rand(0, 5); $i < $count; $i++) {                 
-				$item->comments()->save($comment = factory('App\Comment')->create());
+				$item->comments()->save($comment = factory('App\Models\Comment')->create());
                 $comment->user()->associate($users->random())->save();
 			}
     	});
