@@ -23,6 +23,7 @@
 Route::get('/', ['as' => 'home', 'uses' => 'QuestionsController@index']);
 
 Route::get('/q/{id}', ['as' => 'q', 'uses' => 'QuestionsController@show'])->where(['id' => '[0-9]+']);
+
 Route::group(['namespace' => 'Auth'], function()
 {
 	get('auth/login', ['as' => 'auth.login', 'uses' => 'AuthController@getLogin']);
@@ -35,7 +36,7 @@ get('/tag/{slug}/questions/without_answer', ['as' => 'tag.wo_answer', 'uses' => 
 get('/tag/{slug}/info', ['as' => 'tag.info', 'uses' => 'TagsController@info']);
 
 
-get('/user/{nickname}', ['as' => 'user', 'uses' => 'UsersController@show']);
+get('/user/{nickname}', ['as' => 'user', 'uses' => 'UsersController@getInfo']);
 
 Route::controller('/user/{nickname}', 'UsersController', [
 	'getQuestions' 	=> 'user.questions',

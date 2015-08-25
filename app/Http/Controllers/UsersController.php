@@ -26,7 +26,7 @@ class UsersController extends Controller
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($nickname)
+	public function getInfo($nickname)
 	{
 		$user = User::where('nickname', $nickname)->first();
 

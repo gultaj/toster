@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Models\Question;
 use App\Repositories\QuestionRepository;
+use App\Jobs\IncrementViewQuestion;
 
 class QuestionsController extends Controller
 {
@@ -37,6 +38,8 @@ class QuestionsController extends Controller
     public function show($id)
     {
         $question = $this->question->show($id);
+
+        $this->dispatch(new IncrementViewQuestion($question));
 
         return view('questions.show', compact('question'));
     }
