@@ -12,7 +12,9 @@ class QuestionRepository extends Repository {
 
 	public function index($n = 15)
 	{
-		return $this->model->with('tags', 'answersCount', 'subscribersCount')->paginate($n);
+		return $this->model
+			->with('tags', 'answersCount', 'subscribersCount')
+			->paginate($n);
 	}
 
 	public function show($id)

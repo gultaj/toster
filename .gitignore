@@ -1,7 +1,9 @@
 /vendor
-/node_modules
+node_modules
 Homestead.yaml
 .env
-/.idea
+.idea
 tests/_output/*
-/.phpintel/*
+.phpintel/
+*.sublime-project
+*.sublime-workspace
