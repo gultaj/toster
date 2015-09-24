@@ -1,7 +1,8 @@
 aside.navbar 
 	.navbar__logo: a(href='#') Toster
 	.panel
-		a(href='login.html').panel-user #[i.icon-lock-open-alt] Войти на сайт
+		a(href='login.html').panel-user.user-logged #[i.icon-lock-open-alt] Войти на сайт
+		button.panel-arrow: i.icon-down-open
 	ul.main-menu
 		li.current: a(href='#') #[i.icon-list-bullet] Все вопросы
 		li: a(href='#') #[i.icon-tags] Все теги

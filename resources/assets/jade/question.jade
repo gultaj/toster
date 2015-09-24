@@ -5,6 +5,7 @@ html(lang="ru")
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&amp;subset=latin,cyrillic")
 		link(rel='stylesheet', href='css/' + style_link)
 		link(rel='stylesheet', href='css/fontello.css')
+		script(src="//code.jquery.com/jquery-2.1.4.min.js")
 	body
 		.out
 			include partials/navbar.jade
@@ -21,3 +22,4 @@ html(lang="ru")
 						include partials/sidebar.jade
 
 				include partials/footer.jade
+		script(src="../js/app.js")

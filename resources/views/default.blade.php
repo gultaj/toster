@@ -4,6 +4,7 @@
     <title>@yield('title') - Tosber</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&amp;amp;subset=latin,cyrillic">
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body>
 <div class="out">

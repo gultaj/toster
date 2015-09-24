@@ -5,12 +5,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&amp;amp;subset=latin,cyrillic">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fontello.css">
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
   </head>
   <body>
     <div class="out">
       <aside class="navbar"> 
         <div class="navbar__logo"><a href="#">Toster</a></div>
-        <div class="panel"><a href="login.html" class="panel-user"><i class="icon-lock-open-alt"></i> Войти на сайт</a></div>
+        <div class="panel"><a href="login.html" class="panel-user user-logged"><i class="icon-lock-open-alt"></i> Войти на сайт</a>
+          <button class="panel-arrow"><i class="icon-down-open"></i></button>
+        </div>
         <ul class="main-menu">
           <li class="current"><a href="#"><i class="icon-list-bullet"></i> Все вопросы</a></li>
           <li><a href="#"><i class="icon-tags"></i> Все теги</a></li>
@@ -441,5 +444,6 @@
         </footer>
       </div>
     </div>
+    <script src="../js/app.js"></script>
   </body>
 </html>

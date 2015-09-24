@@ -18,7 +18,12 @@
 		color #fff
 .panel
 	border-bottom 1px solid #424b5f
+	@extend $clearfix
 	&-user
+		&.user-logged
+			float left
+			width 85%
+			padding 15px 20px
 		padding 20px 20px
 		display block
 		color #fff
@@ -32,6 +37,24 @@
 			vertical-align middle
 		&:hover
 			background #606d86
+	&-arrow
+		float left
+		width 15%
+		padding 16px 0 15px
+		font-weight 700
+		font-size 1.4em
+		background none
+		color #D1D9E1
+		border 0
+		border-left 1px solid #424b5f
+		
+		&:hover
+			background #606d86
+			/*& > i:before
+				transform rotate(180deg)
+				transition all .2s*/
+		& > i
+			margin 0
 .main-menu
 	margin 0
 	li
