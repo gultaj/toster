@@ -40,7 +40,7 @@ gulp.task('connect', connect.server({
 
 
 gulp.task('stylus:connect', function () {
-    gulp.src(path.src + 'stylus/*.styl')
+    return gulp.src(path.src + 'stylus/*.styl')
     .pipe(sourcemaps.init())
     .pipe(stylus({'include css': true}))
     .pipe(sourcemaps.write())
@@ -49,7 +49,7 @@ gulp.task('stylus:connect', function () {
 });
 
 gulp.task('jade', function () {
-    gulp.src(path.src + 'jade/*.jade')
+    return gulp.src(path.src + 'jade/*.jade')
     .pipe(jade({
         pretty: true,
         locals: {style_link: 'style.css'}

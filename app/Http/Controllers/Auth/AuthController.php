@@ -37,9 +37,10 @@ class AuthController extends Controller
 
 	public function postLogin(\App\Http\Requests\LoginUserRequest $request)
 	{
-		if (\Auth::attempt($request->except('_token'), true))
+		if (\Auth::attempt($request->except('_token'), true)){
 			return redirect()->intended('/');
-
-		return redirect()->back()->withInput();
+		}
+		
+		return back()->withInput()->with(['message' => 'Wrong email or password']);
 	}
 }

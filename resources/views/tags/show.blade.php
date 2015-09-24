@@ -1,6 +1,6 @@
 @extends('default')
 
-{{-- @section('title', $question->title) --}}
+@section('title', 'Новые вопросы по тегу "'.$tag->title.'"')
 
 @section('content')
 

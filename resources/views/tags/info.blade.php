@@ -1,5 +1,7 @@
 @extends('default')
 
+@section('title', 'Информация по тегу "'.$tag->title.'"')
+
 @section('content')
 
     <div class="page">
