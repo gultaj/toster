@@ -8,7 +8,11 @@
 			<li>Ответ написан {{ $answer->created_at->diffForHumans() }}</li>
 		</ul>
 		<div class="button-group">
-			<a href="#" class="btn_like">Нравится
+			@if ($answer->likes->contains(\Auth::user()->id))
+				<a href="{{ route('dislike', ['answer_id' => $answer->id]) }}" class="btn_like btn_like_liked">Вам нравится
+			@else
+			<a href="{{ route('like', ['answer_id' => $answer->id]) }}" class="btn_like">Нравится
+			@endif
 				@if ($count = $answer->likes->count())
 					<span class="like_count">{{ $count }}</span>
 				@endif

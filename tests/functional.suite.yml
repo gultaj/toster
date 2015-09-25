@@ -10,3 +10,4 @@ modules:
         # add framework module here
         - \Helper\Functional
         - Laravel5
+        - Asserts

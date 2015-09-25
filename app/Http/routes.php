@@ -47,6 +47,8 @@ Route::controller('/user/{nickname}', 'UsersController', [
 ]);
 
 get('answer', ['as' => 'answer', 'uses' => 'AnswersController@index']);
+get('answer/like', ['as' => 'like', 'uses' => 'AnswersController@addLike']);
+get('answer/dislike', ['as' => 'dislike', 'uses' => 'AnswersController@removeLike']);
 
 get('test', function() {
 

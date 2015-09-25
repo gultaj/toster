@@ -26,3 +26,11 @@ $btn_like = #65c178
 	&:hover
 		border-color darken($btn_like, 20%)
 		color @border-color
+	&_liked
+		color #fff
+		background $btn_like
+		.like_count
+			border-left-color #fff
+		&:hover
+			background lighten($btn_like, 10%)
+			color #fff
