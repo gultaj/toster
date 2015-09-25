@@ -28,6 +28,7 @@ Route::group(['namespace' => 'Auth'], function()
 {
 	get('auth/login', ['as' => 'auth.login', 'uses' => 'AuthController@getLogin']);
 	post('auth/login', ['as' => 'auth.login', 'uses' => 'AuthController@postLogin']);
+	get('auth/logout', ['as' => 'auth.logout', 'uses' => 'AuthController@getLogout']);
 });
 
 get('/tag/{slug}/questions', ['as' => 'tag', 'uses' => 'TagsController@questions']);

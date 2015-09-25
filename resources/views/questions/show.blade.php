@@ -2,10 +2,6 @@
 
 @section('title', $question->title)
 
-@section('scripts')
-	<script type="text/javascript" src="{{ url('js/app.js') }}"></script>
-@stop
-
 @section('content')
 
 	<div class="page">

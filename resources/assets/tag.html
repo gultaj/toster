@@ -10,8 +10,14 @@
     <div class="out">
       <aside class="navbar"> 
         <div class="navbar__logo"><a href="#">Toster</a></div>
-        <div class="panel"><a href="login.html" class="panel-user user-logged"><i class="icon-lock-open-alt"></i> Войти на сайт</a>
-          <button class="panel-arrow"><i class="icon-down-open"></i></button>
+        <div class="panel">
+          <div class="panel__wrapper"><a href="login.html" class="panel-user user-logged"><i class="icon-lock-open-alt"></i> Войти на сайт</a>
+            <button class="panel-arrow"><i role="panel-list-opening" class="icon-down-open"></i></button>
+          </div>
+          <ul class="panel-list">
+            <li><a href="#"><i class="icon-cog"></i> Настройки</a></li>
+            <li><a href="#"><i class="icon-logout"></i> Выйти</a></li>
+          </ul>
         </div>
         <ul class="main-menu">
           <li class="current"><a href="#"><i class="icon-list-bullet"></i> Все вопросы</a></li>
@@ -323,6 +329,7 @@
             </ul>
           </div>
         </footer>
+        <script src="../js/app.js"></script>
       </div>
     </div>
   </body>

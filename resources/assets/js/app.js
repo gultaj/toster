@@ -12,4 +12,8 @@ $(document).ready(function() {
 	if (hash = window.location.hash) {
 		$(hash).parent().toggleClass('active')
 	}
+
+	$('[role="panel-list-opening"]').click(function() {
+		$(this).parents('.panel').toggleClass('panel_opened');
+	});
 });

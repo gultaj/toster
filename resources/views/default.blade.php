@@ -37,7 +37,9 @@
     </div>
 </div>
 
-@yield('scripts')
+{{-- @section('scripts') --}}
+    <script type="text/javascript" src="{{ url('js/app.js') }}"></script>
+{{-- @stop --}}
 
 </body>
 </html>
