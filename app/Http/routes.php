@@ -1,22 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-//Route::get('/', function() {
-//
-//});
-
-
-
 \Carbon\Carbon::setLocale(\App::getLocale());
 
 
@@ -47,8 +30,7 @@ Route::controller('/user/{nickname}', 'UsersController', [
 ]);
 
 get('answer', ['as' => 'answer', 'uses' => 'AnswersController@index']);
-get('answer/like', ['as' => 'like', 'uses' => 'AnswersController@addLike']);
-get('answer/dislike', ['as' => 'dislike', 'uses' => 'AnswersController@removeLike']);
+get('answer/like', ['as' => 'like', 'uses' => 'AnswersController@like']);
 
 get('test', function() {
 

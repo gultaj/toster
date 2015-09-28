@@ -34,13 +34,24 @@ class AnswersController extends Controller
         //
     }
 
-    public function addLike(Request $request)
+    public function like(Request $request)
     {
         $answer = Answer::findOrFail($request->input('answer_id'));
-        $this->dispatch(new AddLikeToAnswer($answer, \Auth::user()));
-        
+
+        $message = [];
+
+        if ($answer->likes()->find(\Auth::user()->id)) {
+            $this->dispatch(new RemoveLikeFromAnswer($answer, \Auth::user()));
+            $message['type'] = 'dislike';
+        } else {
+            $this->dispatch(new AddLikeToAnswer($answer, \Auth::user()));
+            $message['type'] = 'like';
+        }
+
+
         if ($request->ajax()) {
-            return $answer->likes->count();
+            $message['count'] = $answer->likes->count();
+            return $message;
         }
         
         return back();
@@ -49,6 +60,10 @@ class AnswersController extends Controller
     public function removeLike(Request $request)
     {
         $answer = Answer::findOrFail($request->input('answer_id'));
+        
+        if ($answer->likes()->find(\Auth::user()->id)) {
+
+        }
 
         $this->dispatch(new RemoveLikeFromAnswer($answer, \Auth::user()));
         

@@ -19,11 +19,14 @@ $(document).ready(function() {
 
 	$('.btn_like').click(function() {
 		event.stopPropagation();
-		var btn = this,
-			href = $(this).attr('href');
-		$.ajax({url: href}).done(function(response) {
-			$(btn).toggleClass('btn_like_liked').find('span').html(parseInt(response));
-			$(btn).attr('href', href.replace(/like/gi, 'dislike'));
+		var btn = this;
+		$.ajax({url: $(btn).attr('href')}).done(function(response) {
+			$(btn).toggleClass('btn_like_liked');
+			if (response.type === 'like') {
+				$(btn).html('Вам нравится<span class="like_count">'+response.count+'</span>');
+			} else {
+				$(btn).html('Нравится<span class="like_count">'+response.count+'</span>');
+			}
 		});
 		event.preventDefault();
 	});
