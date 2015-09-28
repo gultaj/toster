@@ -48,27 +48,9 @@ class AnswersController extends Controller
             $message['type'] = 'like';
         }
 
-
         if ($request->ajax()) {
             $message['count'] = $answer->likes->count();
             return $message;
-        }
-        
-        return back();
-    }
-
-    public function removeLike(Request $request)
-    {
-        $answer = Answer::findOrFail($request->input('answer_id'));
-        
-        if ($answer->likes()->find(\Auth::user()->id)) {
-
-        }
-
-        $this->dispatch(new RemoveLikeFromAnswer($answer, \Auth::user()));
-        
-        if ($request->ajax()) {
-            return $answer->likes->count();
         }
         
         return back();

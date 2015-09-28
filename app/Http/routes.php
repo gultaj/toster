@@ -12,6 +12,9 @@ Route::group(['namespace' => 'Auth'], function()
 	get('auth/login', ['as' => 'auth.login', 'uses' => 'AuthController@getLogin']);
 	post('auth/login', ['as' => 'auth.login', 'uses' => 'AuthController@postLogin']);
 	get('auth/logout', ['as' => 'auth.logout', 'uses' => 'AuthController@getLogout']);
+
+	get('auth/registration', ['as' => 'auth.register', 'uses' => 'AuthController@getRegistration']);
+	post('auth/registration', ['as' => 'auth.register', 'uses' => 'AuthController@postRegistration']);
 });
 
 get('/tag/{slug}/questions', ['as' => 'tag', 'uses' => 'TagsController@questions']);

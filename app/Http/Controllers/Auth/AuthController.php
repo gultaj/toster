@@ -44,4 +44,9 @@ class AuthController extends Controller
 		return back()->withInput()->with(['message' => 'Wrong email or password']);
 	}
 
+	public function getRegistration()
+	{
+		return view('auth.registration');
+	}
+
 }
