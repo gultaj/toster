@@ -8,6 +8,7 @@
 
 		<header class="page__header login-header">
 			<h1 class="page__header-title">Регистрация</h1>
+			<a href="{{ route('auth.login') }}" class="login-header__link">Вход</a>
 		</header>
 
 		<div class="page__body">
@@ -28,8 +29,8 @@
 				{!! Form::label('password', 'Пароль', ['class' => 'form__label']) !!}
 				{!! Form::password('password', ['class' => 'form__control', 'required']) !!}
 
-				{!! Form::label('password_confirm', 'Пароль ещё раз', ['class' => 'form__label']) !!}
-				{!! Form::password('password_confirm', ['class' => 'form__control', 'required']) !!}
+				{!! Form::label('password_confirmation', 'Пароль ещё раз', ['class' => 'form__label']) !!}
+				{!! Form::password('password_confirmation', ['class' => 'form__control', 'required']) !!}
 
 				{!! Form::submit('Зарегистрироваться', ['class' =>'form__btn btn btn_submit']) !!}
 

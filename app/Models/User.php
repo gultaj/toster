@@ -62,6 +62,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		$this->attributes['password'] = \Hash::make($password);
 	}
 
+	public function setAvatarAttribute()
+	{
+		$this->attributes['avatar'] = 'img/user1.png';
+	}
+
 	public function getFullNameAttribute()
 	{
 		if (empty($this->first_name) and empty($this->last_name)) {
@@ -77,6 +82,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public function getSolutionsPercentAttribute()
 	{
-		return round($this->solutions->count() / $this->answers->count() * 100);
+		if ($this->solutions->count() and $this->answers->count())
+			return round($this->solutions->count() / $this->answers->count() * 100);
+
+		return 0;
 	}
 }

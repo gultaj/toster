@@ -8,6 +8,7 @@
 
 		<header class="page__header login-header">
 			<h1 class="page__header-title">Вход</h1>
+			<a href="{{ route('auth.register') }}" class="login-header__link">Регистрация</a>
 		</header>
 
 		<div class="page__body">

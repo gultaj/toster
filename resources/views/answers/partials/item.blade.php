@@ -9,8 +9,11 @@
 		</ul>
 		<div class="button-group">
 			<a href="{{ route('like', ['answer_id' => $answer->id]) }}" 
-				class="btn_like{{ ($liked = $answer->likes->contains(\Auth::user()->id)) ? ' btn_like_liked' : '' }}">
-				{{ $liked ? 'Вам нравится' : 'Нравится' }}
+				@if (\Auth::user() && $answer->likes->contains(\Auth::user()->id))
+					class="btn_like btn_like_liked">Вам нравится
+				@else
+					class="btn_like">Нравится
+				@endif
 			@if ($count = $answer->likes->count())
 				<span class="like_count">{{ $count }}</span>
 			@endif

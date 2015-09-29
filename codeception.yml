@@ -15,12 +15,12 @@ extensions:
 modules:
     config:
         Db:
-            dsn: 'mysql:host=localhost;dbname=homestead'
+            dsn: 'mysql:host=localhost;port=33060;dbname=homestead'
             user: 'homestead'
             password: 'secret'
             dump: tests/_data/dump.sql
         Dbh:
-            dsn: 'mysql:host=localhost;dbname=homestead'
+            dsn: 'mysql:host=localhost;port=33060;dbname=homestead'
             user: 'homestead'
             password: 'secret'
             dump: tests/_data/dump.sql

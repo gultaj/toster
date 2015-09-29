@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use App\Jobs\RegisterUser;
 
 class AuthController extends Controller
 {
@@ -47,6 +48,14 @@ class AuthController extends Controller
 	public function getRegistration()
 	{
 		return view('auth.registration');
+	}
+
+	public function postRegistration(\App\Http\Requests\RegisterUserRequest $request)
+	{
+		$this->dispatch(new RegisterUser($request->except('_token')));
+
+		return redirect()->route('auth.login')->with(['message' => 'Вы зарегистрированы', 'type' => 'success']);
+
 	}
 
 }
