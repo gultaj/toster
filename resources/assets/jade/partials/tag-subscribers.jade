@@ -23,31 +23,23 @@ header.page-header
 nav.page__tabs
 	ul.tabs
 		li: a(href='#').main-menu__item Информация
-		li.current: span.main-menu__item Новые вопросы
+		li: span.main-menu__item Новые вопросы
 		li: a(href='#').main-menu__item Интересные
 		li: a(href='#').main-menu__item Без ответа
-		li: a(href='tag-subscribers.html').main-menu__item Подписчики
+		li.current: a(href='#').main-menu__item Подписчики
 .page__body
-	ul.content-list
+	ul.content-list.content-list_cards
 		- var n = 0
 		while n < 10
 			- n++
-			li.content-list__item.question
-				.question__wrap
-					.question__content
-						ul.question__tags.question__tags_short
-							li.question__tags-item 
-								i.icon-tag
-								a(href='#') Gulp
-							li.question__tags-item_more +2 ещё
-						h2.question__title: a(href='question.html').question__title-link Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-						ul.question__attr
-							li n подписчиков
-							li когда
-							li m просмотров
-				.question__answers-count
-					a(href='#').answer-counter
-						.answer-counter__count 8
-						.answer-counter__value ответов
+			li.content-list__item
+				article.card
+					header.card__head
+						a(href="#").card__head-image
+							i.icon-tag
+						h2.card__head-title: a(href="#") JavaScript
+					.card__stats
+					.card__rate
+					.card__buttons
 
-	include pagination.jade
+				

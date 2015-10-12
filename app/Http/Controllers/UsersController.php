@@ -55,12 +55,15 @@ class UsersController extends Controller
 
 	public function getTags($nickname)
 	{
+		$user = User::where('nickname', $nickname)->first();
 		
+		return view('users.tags', ['user' => $user, 'menu_items' => $this->buildMenu($user)]);
 	}
 
 	public function getSubscribes($nickname)
 	{
-		
+
+
 	}
 
 	public function buildMenu($user = null)
