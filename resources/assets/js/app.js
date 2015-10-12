@@ -21,12 +21,33 @@ $(document).ready(function() {
 		event.stopPropagation();
 		var btn = this;
 		$.ajax({url: $(btn).attr('href')}).done(function(response) {
-			$(btn).toggleClass('btn_like_liked');
 			if (response.type === 'like') {
 				$(btn).html('Вам нравится<span class="like_count">'+response.count+'</span>');
 			} else {
 				$(btn).html('Нравится<span class="like_count">'+response.count+'</span>');
 			}
+			$(btn).toggleClass('btn_like_liked');
+		});
+		event.preventDefault();
+	});
+
+	$('.btn_subscribe').click(function() {
+		event.stopPropagation();
+		var btn = this;
+		$.ajax({
+			url: $(btn).attr('href')
+     	}).done(function(response) {
+			if (response.type === 'subscribe') {
+				$(btn).html('Вы подписаны');
+				$(btn).after('<span class="subscribe_count"><i class="icon-cog"></i></span>');
+			} else {
+				$(btn).html('Подписаться');
+				$(btn).next().remove();
+			}
+			var counter = $('a.mini-counter')[0];
+			$(counter).find('.mini-counter__count').text(response.count);
+			$(counter).find('.mini-counter__value').text(response.title);
+			$(btn).parent().toggleClass('btn_blue');
 		});
 		event.preventDefault();
 	});

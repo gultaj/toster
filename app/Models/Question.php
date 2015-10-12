@@ -23,7 +23,7 @@ class Question extends Model
 
 	public function subscribers()
 	{
-		return $this->morphMany('App\Models\Subscribe', 'subscribable');
+		return $this->morphToMany('App\Models\User', 'subscribe');
 	}
 
 	public function user()
@@ -40,7 +40,7 @@ class Question extends Model
 
 	public function subscribersCount()
 	{
-		return $this->subscribers()->selectRaw('subscribable_id, count(*) as count')->groupBy('subscribable_id');
+		return $this->subscribers()->selectRaw('subscribe_id, count(*) as count')->groupBy('subscribe_id');
 	}
 
 	// ATTRIBUTES
@@ -80,11 +80,11 @@ class Question extends Model
 		return $this->view_count . ' ' . \Lang::choice('count.views', ru_count($this->view_count));
 	}
 
-	public function scopeFull($query)
+/*	public function scopeFull($query)
 	{
 		return $query->with('tags', 'user')
 			->with('comments', 'comments.user')
 			->with('answers', 'answers.user', 'answers.comments', 'answers.comments.user', 'answers.likes')
 			->with('subscribersCount');
-	}
+	}*/
 }

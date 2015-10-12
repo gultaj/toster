@@ -4,7 +4,7 @@
 		<div class="panel__wrapper">
 			<a class="panel-user user-logged" href="{{ route('user', ['nickname' => Auth::user()->nickname]) }}">
 				<img class="panel-user__avatar" src="{{ url(Auth::user()->avatar) }}"> 
-				{{ Auth::user()->nickname }} </a>
+				{{ $currentUser->nickname }} </a>
 			<button class="panel-arrow" ><i class="icon-down-open" role="panel-list-opening"></i></button>
 		</div>
 		<ul class="panel-list">

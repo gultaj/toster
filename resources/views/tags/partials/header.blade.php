@@ -19,7 +19,17 @@
 			</a></li>
 		</ul>
 	</div>
-	<div class="page-header__buttons"><a href="#" class="btn_subscribe">Подписаться</a>
+	<div class="page-header__buttons">
+		@if ($currentUser and $tag->hasSubscriber($currentUser))
+			<div class="btn-box btn_blue">
+				<a href="{{ route('tag.subscribe', ['slug' => $tag->slug]) }}" data-token="{{ csrf_token() }}" class="btn_subscribe">Вы подписаны</a>
+				<span class="subscribe_count"><i class="icon-cog"></i></span>
+			</div>
+		@else
+			<div class="btn-box">
+				<a href="{{ route('tag.subscribe', ['slug' => $tag->slug]) }}" data-token="{{ csrf_token() }}" class="btn_subscribe">Подписаться</a>
+			</div>
+		@endif
 		<div class="dropdown dropdown_settings">
 			<button class="btn btn_settings btn_dott"></button>
 		</div>

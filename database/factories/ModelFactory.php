@@ -65,8 +65,3 @@ $factory->define(App\Models\Comment::class, function($faker) {
         'body' => $faker->realText(rand(50, 200), 5)
     ];
 });
-
-$factory->define(App\Models\Subscribe::class, function($faker) {
-
-    return [];
-});

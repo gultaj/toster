@@ -21,6 +21,7 @@ get('/tag/{slug}/questions', ['as' => 'tag', 'uses' => 'TagsController@questions
 get('/tag/{slug}/questions/interest', ['as' => 'tag.interest', 'uses' => 'TagsController@interest']);
 get('/tag/{slug}/questions/without_answer', ['as' => 'tag.wo_answer', 'uses' => 'TagsController@withoutAnswer']);
 get('/tag/{slug}/info', ['as' => 'tag.info', 'uses' => 'TagsController@info']);
+get('/tag/{slug}/subscribe', ['as' => 'tag.subscribe', 'uses' => 'SubscribesController@tagSubscribe']);
 
 
 get('/user/{nickname}', ['as' => 'user', 'uses' => 'UsersController@getInfo']);
@@ -35,8 +36,8 @@ Route::controller('/user/{nickname}', 'UsersController', [
 get('answer', ['as' => 'answer', 'uses' => 'AnswersController@index']);
 get('answer/like', ['as' => 'like', 'uses' => 'AnswersController@like']);
 
-get('test', function() {
+/*get('test', function() {
 
-	Auth::logout();
+	return App\Models\Tag::find(20)->hasSubscriber(203);
 
-});
+});*/

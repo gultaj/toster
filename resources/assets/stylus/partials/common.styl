@@ -94,8 +94,20 @@ $btn_subscr = #2d72d9
 	&:hover
 		border-color darken($btn_subscr, 20%)
 		color @border-color
-	.subscribe_count
-		border-color darken($btn_subscr, 20%)
+		.subscribe_count
+			border-color darken($btn_subscr, 20%)
+	&-active
+		background $btn_subscr
+		color #fff
+		.subscribe_count
+			border-left-color #fff			
+		&:hover
+			background lighten($btn_subscr, 15%)
+			color #fff
+			.subscribe_count
+				color #fff
+				border-left-color @color
+			
 .btn_settings, .btn_share
 	padding 5px 8px
 	border-radius 3px
@@ -137,3 +149,26 @@ $btn_subscr = #2d72d9
 		border-bottom 1px solid #dfe5eb
 		&:last-child
 			border-bottom none
+			
+.btn-box
+	& > *:first-child
+		border-top-right-radius 0
+		border-bottom-right-radius 0
+	& > *:last-child
+		border-top-right-radius 3px
+		border-bottom-right-radius 3px
+	.subscribe_count
+		padding 5px
+		margin-left 1px
+	
+.btn_blue
+	& > *
+		background $btn_subscr
+		color #fff
+		padding 5px 8px
+		vertical-align bottom
+		float left !important
+		&:hover
+			color #fff
+			background lighten($btn_subscr, 10%)
+			cursor pointer

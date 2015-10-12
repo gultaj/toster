@@ -57,6 +57,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->hasMany('App\Models\Comment');
 	}
 
+	public function subscribedTags()
+	{
+		return $this->morphedByMany('App\Models\Tag', 'subscribe');
+	}
+
+	public function subscribedQuestions()
+	{
+		return $this->morphedByMany('App\Models\Question', 'subscribe');
+	}
+
 	public function setPasswordAttribute($password)
 	{
 		$this->attributes['password'] = \Hash::make($password);

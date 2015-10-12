@@ -28,6 +28,7 @@ gulp.task('stylus', function () {
 
 gulp.task('watch:stylus', function () {
     gulp.watch([path.src + 'stylus/**/*'], ['stylus']);
+    gulp.watch([path.src + 'js/**/*'], ['js']); 
 });
 
 // CONNECT
@@ -87,6 +88,14 @@ gulp.task('js', function() {
     .pipe(gulp.dest(path.dest + 'js'))
 });
 
+gulp.task('stylus:build', function () {
+    gulp.src(path.src + 'stylus/*.styl')
+    .pipe(sourcemaps.init())
+    .pipe(stylus({'include css': true}))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(path.dest + 'css'));
+});
+
 
 
 
@@ -98,7 +107,7 @@ gulp.task('concat', function () {
     .pipe(gulp.dest(src_path + 'css/'));
 });
 
-gulp.task('default', ['stylus', 'watch:stylus']);
+gulp.task('default', ['stylus', 'js', 'watch:stylus']);
 gulp.task('watch', ['connect', 'stylus:connect', 'jade', 'watch:connect']);
 
-// gulp.task('build', ['stylus:build', 'jade:build', 'imagemin']);
+gulp.task('build', ['stylus:build', 'jade:build', 'imagemin']);

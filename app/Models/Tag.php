@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
@@ -15,7 +16,17 @@ class Tag extends Model
 
 	public function subscribers()
     {
-        return $this->morphMany('App\Models\Subscribe', 'subscribable');
+        return $this->morphToMany('App\Models\User', 'subscribe');
+    }
+
+    public function hasSubscriber(User $user)
+    {
+        if (! $this->relationLoaded('subscribers'))
+            $this->load('subscribers');
+
+        $subscribers = $this->getRelation('subscribers');
+
+        return $subscribers->contains($user);
     }
 
 	public function solvedQuestions()
@@ -50,8 +61,8 @@ class Tag extends Model
 	public function subscribersCount()
     {
         return $this->subscribers()
-            ->selectRaw('subscribable_id, count(*) as count')
-            ->groupBy('subscribable_id');
+            ->selectRaw('subscribe_id, count(*) as count')
+            ->groupBy('subscribe_id');
     }
 
     public function getSubscribersCountAttribute()

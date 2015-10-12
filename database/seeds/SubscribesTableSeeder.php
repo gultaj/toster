@@ -11,7 +11,7 @@ class SubscribesTableSeeder extends Seeder
      */
     public function run()
     {
-        App\Models\Subscribe::truncate();
+        DB::table('subscribes')->truncate();
 
     	$list = collect()->merge(App\Models\Question::all())->merge(App\Models\Tag::all());
 
@@ -19,8 +19,7 @@ class SubscribesTableSeeder extends Seeder
 
     	$list->each(function($item) use ($users) {
 			for ($i = 0, $count = rand(0, 10); $i < $count; $i++) {                 
-				$item->subscribers()->save($subscriber = factory('App\Models\Subscribe')->create());
-                $subscriber->user()->associate($users->random())->save();
+				$item->subscribers()->attach($users->random());
 			}
     	});
     }

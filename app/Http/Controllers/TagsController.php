@@ -55,6 +55,28 @@ class TagsController extends Controller
 
     }
 
+    public function subscribeTrigger(Request $request)
+    {
+        $tag = Tag::findOrFail($request->input('tag_id'));
+
+        $message = [];
+
+        if ($tag->subscribers()->find(\Auth::user()->id)) {
+            $this->dispatch(new RemoveLikeFromAnswer($tag, \Auth::user()));
+            $message['type'] = 'dislike';
+        } else {
+            $this->dispatch(new AddLikeToAnswer($tag, \Auth::user()));
+            $message['type'] = 'like';
+        }
+
+        if ($request->ajax()) {
+            $message['count'] = $tag->likes->count();
+            return $message;
+        }
+        
+        return back();    
+    }
+
     public function buildMenu($tag = null)
     {
         return [

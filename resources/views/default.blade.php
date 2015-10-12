@@ -9,7 +9,7 @@
 <body>
 <div class="out">
     
-    @if (Auth::check())
+    @if ($currentUser)
         @include('partials.nav.user')
     @else
         @include('partials.nav.guest')

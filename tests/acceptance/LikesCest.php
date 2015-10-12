@@ -12,7 +12,7 @@ class LikesCest
     }
 
     // tests
-    public function like(AcceptanceTester $I)
+    public function likes(AcceptanceTester $I)
     {
         $answer = App\Models\Answer::get()->random();
 
