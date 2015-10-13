@@ -56,8 +56,22 @@ class UsersController extends Controller
 	public function getTags($nickname)
 	{
 		$user = User::where('nickname', $nickname)->first();
+
+
+		$tags = $user->subscribedTags()->with(['subscribers', 'subscribersCount',
+			'questionsCount' => function($query) use ($user) {
+				$query->where('user_id', $user->id);
+			},
+			'answersCount' => function($query) use ($user) {
+				$query->where('user_id', $user->id);
+			}
+		])->get();
 		
-		return view('users.tags', ['user' => $user, 'menu_items' => $this->buildMenu($user)]);
+		return view('users.tags', [
+			'user' => $user, 
+			'tags' => $tags, 
+			'menu_items' => $this->buildMenu($user)
+		]);
 	}
 
 	public function getSubscribes($nickname)

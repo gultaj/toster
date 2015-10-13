@@ -22,7 +22,7 @@
 	<div class="page-header__buttons">
 		@if ($currentUser and $tag->hasSubscriber($currentUser))
 			<div class="btn-box btn_blue">
-				<a href="{{ route('tag.subscribe', ['slug' => $tag->slug]) }}" data-token="{{ csrf_token() }}" class="btn_subscribe">Вы подписаны</a>
+				<a href="{{ route('tag.subscribe', ['slug' => $tag->slug]) }}" class="btn_subscribe">Вы подписаны</a>
 				<span class="subscribe_count"><i class="icon-cog"></i></span>
 			</div>
 		@else
