@@ -4,9 +4,12 @@ namespace App\Models;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use App\Toster\Traits\SubscribersModel;
 
 class Tag extends Model
 {
+    use SubscribersModel;
+
 	protected $fillable = ['title', 'slug', 'description'];
 
 	public function questions()
@@ -14,7 +17,7 @@ class Tag extends Model
 		return $this->belongsToMany('App\Models\Question', 'question_tags');        
 	}
 
-	public function subscribers()
+	/*public function subscribers()
     {
         return $this->morphToMany('App\Models\User', 'subscribe');
     }
@@ -27,7 +30,7 @@ class Tag extends Model
         $subscribers = $this->getRelation('subscribers');
 
         return $subscribers->contains($user);
-    }
+    }*/
 
 	public function solvedQuestions()
 	{
@@ -85,7 +88,7 @@ class Tag extends Model
 		return round($this->solvedQuestions / $this->questions->count() * 100);
 	}
 
-	public function subscribersCount()
+	/*public function subscribersCount()
     {
         return $this->subscribers()
             ->selectRaw('subscribe_id, count(*) as count')
@@ -108,5 +111,5 @@ class Tag extends Model
 
         return $count .' '. \Lang::choice('count.subscribers', ru_count($count));
     }
-
+*/
 }
