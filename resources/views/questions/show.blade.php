@@ -37,11 +37,15 @@
 					<li>{{ $question->veiwCountHumans }}</li>
 				</ul>
 				<div class="button-group">
-					<a href="#" class="btn_subscribe">Подписаться
-					@if($question->subscribersCount)
-						<span class="subscribe_count">{{ $question->subscribersCount }}</span>
+					@if ($currentUser and $question->hasSubscriber($currentUser))
+						<a href="{{ route('q.subscribe', ['id' => $question->id]) }}" class="btn_subscribe btn_subscribe-active">
+							Вы подписаны<span class="subscribe_count">{{ $question->subscribersCount }}</span>
+						</a>
+					@else
+						<a href="{{ route('q.subscribe', ['id' => $question->id]) }}" class="btn_subscribe">
+							Подписаться<span class="subscribe_count">{{ $question->subscribersCount }}</span>
+						</a>
 					@endif
-					</a>
 					<a href="#" class="btn_comment-toogle"><span>{{ $question->commentsCount or 'Комментировать' }}</span></a>
 					<div class="dropdown dropdown_settings">
 						<button class="btn btn_settings btn_dott"></button>

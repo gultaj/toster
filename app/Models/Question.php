@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Question extends Model
 {
@@ -70,7 +71,7 @@ class Question extends Model
 
 	public function getSubscribersCountHumansAttribute()
 	{
-		$count = $this->subscribersCount;
+		$count = (int) ($this->relationLoaded('subscribersCount') ? $this->subscribersCount : $this->subscribers->count());
 
 		return $count .' '. \Lang::choice('count.subscribers', ru_count($count));
 	}
@@ -80,11 +81,13 @@ class Question extends Model
 		return $this->view_count . ' ' . \Lang::choice('count.views', ru_count($this->view_count));
 	}
 
-/*	public function scopeFull($query)
-	{
-		return $query->with('tags', 'user')
-			->with('comments', 'comments.user')
-			->with('answers', 'answers.user', 'answers.comments', 'answers.comments.user', 'answers.likes')
-			->with('subscribersCount');
-	}*/
+	public function hasSubscriber(User $user)
+    {
+        if (! $this->relationLoaded('subscribers'))
+            $this->load('subscribers');
+
+        $subscribers = $this->getRelation('subscribers');
+
+        return $subscribers->contains($user);
+    }
 }

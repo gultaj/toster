@@ -22,7 +22,7 @@ class QuestionRepository extends Repository {
 		return $this->model->with('tags', 'user')
 			->with('comments', 'comments.user')
 			->with('answers', 'answers.user', 'answers.comments', 'answers.comments.user', 'answers.likes')
-			->with('subscribersCount')
+			->with('subscribers')
 			->findOrFail($id);
 	}
 

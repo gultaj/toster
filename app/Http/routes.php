@@ -5,7 +5,8 @@
 
 Route::get('/', ['as' => 'home', 'uses' => 'QuestionsController@index']);
 
-Route::get('/q/{id}', ['as' => 'q', 'uses' => 'QuestionsController@show'])->where(['id' => '[0-9]+']);
+get('/q/{id}', ['as' => 'q', 'uses' => 'QuestionsController@show'])->where(['id' => '[0-9]+']);
+get('/q/{id}/subscribe', ['as' => 'q.subscribe', 'uses' => 'SubscribesController@questionSubscribe'])->where(['id' => '[0-9]+']);
 
 Route::group(['namespace' => 'Auth'], function()
 {
