@@ -61,33 +61,12 @@ class Tag extends Model
         return $count .' '. \Lang::choice('count.questions', ru_count($count));
     }
 
-    public function answersCount()
-    {
-        return $this->answers()
-            ->selectRaw('questions.tag_id, count(*) as count')
-            ->groupBy('questions.tag_id');
-    }
-
-    public function getAnswersCountAttribute()
-    {
-        if (! $this->relationLoaded('answersCount'))
-            $this->load('answersCount');
-
-        $related = $this->getRelation('answersCount')->first();
-        
-        return $related ? (int) $related->count : 0;
-    }
-
     public function getAnswersCountHumanAttribute()
     {
-        $count = (int) ($this->relationLoaded('answersCount') ? $this->answersCount : $this->answers->count());
+        // $count = (int) ($this->relationLoaded('answersCount') ? $this->answersCount : $this->answers->count());
+        $count = isset($this->answersCount) ? (int) $this->answersCount : 0;
 
         return $count .' '. \Lang::choice('count.answers', ru_count($count));
-    }
-
-    public function answers()
-    {
-        return $this->hasManyThrough('App\Models\Answer', 'App\Models\Question');
     }
 
 	public function getSolvedQuestionsAttribute()

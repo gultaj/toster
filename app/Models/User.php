@@ -85,6 +85,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->first_name . ' ' . $this->last_name;
 	}
 
+	public function questionsCount()
+	{
+		return $this->subscribers()
+            ->selectRaw('subscribe_id, count(*) as count')
+            ->groupBy('subscribe_id');
+	}
+
 	public function solutions()
 	{
 		return $this->answers()->selectRaw('count(*) as count')->where('is_solution', 1);

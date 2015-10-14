@@ -55,6 +55,10 @@ class UsersController extends Controller
 
 	public function getTags($nickname)
 	{
+
+		
+
+    
 		$user = User::where('nickname', $nickname)->first();
 
 
@@ -62,14 +66,31 @@ class UsersController extends Controller
 			'questionsCount' => function($query) use ($user) {
 				$query->where('user_id', $user->id);
 			},
-			'answersCount' => function($query) use ($user) {
-				$query->where('user_id', $user->id);
-			}
 		])->get();
+
+		// return $tags[0]->answers;
+		// $timeStart = microtime(true);
+		$answers = \DB::table('answers')            
+			->join('questions', 'questions.id', '=', 'answers.question_id')
+            ->join('question_tags', 'questions.id', '=', 'question_tags.question_id')
+            ->select('answers.id', 'question_tags.tag_id as tag_id')
+            ->whereIn('question_tags.tag_id', $tags->pluck('id'))
+            ->where('answers.user_id', $user->id)
+            ->get();
+
+
+       	$answers = collect($answers)->groupBy('tag_id');
+       	$tags = $tags->each(function($tag, $key) use ($answers) {
+       		$tag->answersCount = isset($answers[$tag->id]) ? count($answers[$tag->id]) : 0;
+       	});
+
+/*       	$diff = microtime(true) - $timeStart;
+    	$micro = $diff - intval($diff);
+    	return $micro;*/
 		
 		return view('users.tags', [
 			'user' => $user, 
-			'tags' => $tags, 
+			'tags' => $tags,
 			'menu_items' => $this->buildMenu($user)
 		]);
 	}

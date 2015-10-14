@@ -37,7 +37,26 @@ get('answer', ['as' => 'answer', 'uses' => 'AnswersController@index']);
 get('answer/like', ['as' => 'like', 'uses' => 'AnswersController@like']);
 
 /*get('test', function() {
+	// $tag = App\Models\Tag::find(1);
+	// dd($tag->answers1()->get());
+	\DB::enableQueryLog();
 
-	return App\Models\Tag::find(20)->hasSubscriber(203);
+	$tags = App\Models\Tag::with(['questions' => function($query) {
+		$query->select('questions.id')->with(['answers' => function($with) {
+			$with->select('answers.id');
+		}]);
+	}])->get();
+	$tags->each(function($item, $key) {
+		echo $item->questions->pluck('answers')->count()."\n";
+	});
+	// dd($a)
+	dd(\DB::getQueryLog());
+
+	dd(\DB::table('answers')
+            ->join('questions', 'questions.id', '=', 'answers.question_id')
+            ->join('question_tags', 'questions.id', '=', 'question_tags.question_id')
+            ->select('answers.*')
+            ->where('question_tags.tag_id', 1)
+            ->get());
 
 });*/

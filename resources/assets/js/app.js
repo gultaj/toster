@@ -38,16 +38,29 @@ $(document).ready(function() {
 			url: $(btn).attr('href')
      	}).done(function(response) {
 			if (response.type === 'subscribe') {
-				$(btn).html('Вы подписаны');
-				$(btn).after('<span class="subscribe_count"><i class="icon-cog"></i></span>');
+				if($(btn).parent().hasClass('btn_box')) {
+					$(btn).html('Вы подписаны');
+					$(btn).after('<span class="subscribe_count"><i class="icon-cog"></i></span>');
+				} else {
+					$(btn).html('Вы подписаны<span class="subscribe_count">'+response.count+'</span>');
+				}
 			} else {
-				$(btn).html('Подписаться');
-				$(btn).next().remove();
+				if($(btn).parent().hasClass('btn_box')) {
+					$(btn).html('Подписаться');
+					$(btn).next().remove();
+				} else {
+					$(btn).html('Подписаться<span class="subscribe_count">'+response.count+'</span>');
+				}
+				
 			}
-			var counter = $('a.mini-counter')[0];
-			$(counter).find('.mini-counter__count').text(response.count);
-			$(counter).find('.mini-counter__value').text(response.title);
-			$(btn).parent().toggleClass('btn_blue');
+			if($(btn).parent().hasClass('btn_box')) {
+				var counter = $('a.mini-counter')[0];
+				$(counter).find('.mini-counter__count').text(response.count);
+				$(counter).find('.mini-counter__value').text(response.title);
+				$(btn).parent().toggleClass('btn_blue');
+			} else {
+				$(btn).toggleClass('btn_subscribe-active')
+			}
 		});
 		event.preventDefault();
 	});
