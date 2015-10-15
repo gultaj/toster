@@ -18,7 +18,7 @@
 					<span class="like_count">{{ $count }}</span>
 				@endif
 			</a>
-			<a href="{{ route('answer') }}?answer_id={{ $answer->id }}#comments_list_{{ $answer->id }}" class="btn_comment">
+			<a href="{{ route('q', ['id' => $answer->question->id]) }}#comments_list_{{ $answer->id }}" class="btn_comment">
 				<span>{{ $answer->commentsCountHumans or 'Комментировать' }}</span>
 			</a>
 		</div>

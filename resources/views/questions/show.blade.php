@@ -43,7 +43,10 @@
 						</a>
 					@else
 						<a href="{{ route('q.subscribe', ['id' => $question->id]) }}" class="btn_subscribe">
-							Подписаться<span class="subscribe_count">{{ $question->subscribersCount }}</span>
+							Подписаться
+							@if($question->subscribersCount)
+								<span class="subscribe_count">{{ $question->subscribersCount }}</span>
+							@endif
 						</a>
 					@endif
 					<a href="#" class="btn_comment-toogle"><span>{{ $question->commentsCount or 'Комментировать' }}</span></a>
@@ -58,6 +61,8 @@
 					<ul class="list-content list-content_comments">
 
 						@each('comments.show', $question->comments, 'comment')
+
+						@include('comments.form', ['typeId' => $question->id, 'commentType' => 'question'])
 						
 					</ul>
 				</div>

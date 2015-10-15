@@ -18,3 +18,10 @@
 							a(href="#").btn_answer Ответить
 							.dropdown.dropdown_settings
 								button.btn.btn_settings.btn_dott
+		li.list-content__item.comment_form
+			form.form_comments#answer_comments_id
+				input(type="hidden", name="answer_id", value="id") 
+				.field
+					textarea(rows=1, name="body").comment__field
+				.form__buttons
+					input(type="submit", disabled).form__submit

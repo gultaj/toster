@@ -8,6 +8,8 @@ Route::get('/', ['as' => 'home', 'uses' => 'QuestionsController@index']);
 get('/q/{id}', ['as' => 'q', 'uses' => 'QuestionsController@show'])->where(['id' => '[0-9]+']);
 get('/q/{id}/subscribe', ['as' => 'q.subscribe', 'uses' => 'SubscribesController@questionSubscribe'])->where(['id' => '[0-9]+']);
 
+post('/comment', ['as' => 'comment', 'uses' => 'CommentsController@comment']);
+
 Route::group(['namespace' => 'Auth'], function()
 {
 	get('auth/login', ['as' => 'auth.login', 'uses' => 'AuthController@getLogin']);

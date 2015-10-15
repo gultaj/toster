@@ -156,82 +156,16 @@
                                     </div>
                                   </div>
                                 </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-content__item">
-                          <div class="user-summary"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
-                            <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span>
-                              <div class="user-summary__about">About user</div>
-                            </div>
-                          </div>
-                          <div class="answer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, totam quisquam inventore fugiat? Dolore dolor odit laborum. Dolores tempore laudantium, aut facilis cupiditate expedita, commodi accusantium facere, aliquam veritatis numquam.
-                            <ul class="question__attr">
-                              <li>Вопрос задан N часов назад</li>
-                            </ul>
-                            <div class="button-group"><a href="#" class="btn_like btn_like_liked">Нравится</a><a href="#" class="btn_comment-toogle"><span>5 комментариев</span></a>
-                              <div class="dropdown dropdown_settings">
-                                <button class="btn btn_settings btn_dott"></button>
-                              </div>
-                              <div class="dropdown dropdown_share"><a href="#">
-                                  <button class="btn btn_share icon-share"></button></a></div>
-                            </div>
-                            <div class="answer__comments">
-                              <ul class="list-content list-content_comments">
-                                <li class="list-content__item comment">
-                                  <div class="comment__header">
-                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
-                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                <li class="list-content__item comment_form">
+                                  <form id="answer_comments_id" class="form_comments">
+                                    <input type="hidden" name="answer_id" value="id">
+                                    <div class="field">
+                                      <textarea rows="1" name="body" class="comment__field"></textarea>
                                     </div>
-                                  </div>
-                                  <div class="comment__body">
-                                    <div class="comment__body_inner">
-                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
-                                      <div class="comment__date">Написано n часов назад</div>
-                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
-                                        <div class="dropdown dropdown_settings">
-                                          <button class="btn btn_settings btn_dott"></button>
-                                        </div>
-                                      </div>
+                                    <div class="form__buttons">
+                                      <input type="submit" disabled class="form__submit">
                                     </div>
-                                  </div>
-                                </li>
-                                <li class="list-content__item comment">
-                                  <div class="comment__header">
-                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
-                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
-                                    </div>
-                                  </div>
-                                  <div class="comment__body">
-                                    <div class="comment__body_inner">
-                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
-                                      <div class="comment__date">Написано n часов назад</div>
-                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
-                                        <div class="dropdown dropdown_settings">
-                                          <button class="btn btn_settings btn_dott"></button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </li>
-                                <li class="list-content__item comment">
-                                  <div class="comment__header">
-                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
-                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
-                                    </div>
-                                  </div>
-                                  <div class="comment__body">
-                                    <div class="comment__body_inner">
-                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
-                                      <div class="comment__date">Написано n часов назад</div>
-                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
-                                        <div class="dropdown dropdown_settings">
-                                          <button class="btn btn_settings btn_dott"></button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
+                                  </form>
                                 </li>
                               </ul>
                             </div>
@@ -310,6 +244,17 @@
                                     </div>
                                   </div>
                                 </li>
+                                <li class="list-content__item comment_form">
+                                  <form id="answer_comments_id" class="form_comments">
+                                    <input type="hidden" name="answer_id" value="id">
+                                    <div class="field">
+                                      <textarea rows="1" name="body" class="comment__field"></textarea>
+                                    </div>
+                                    <div class="form__buttons">
+                                      <input type="submit" disabled class="form__submit">
+                                    </div>
+                                  </form>
+                                </li>
                               </ul>
                             </div>
                           </div>
@@ -386,6 +331,105 @@
                                       </div>
                                     </div>
                                   </div>
+                                </li>
+                                <li class="list-content__item comment_form">
+                                  <form id="answer_comments_id" class="form_comments">
+                                    <input type="hidden" name="answer_id" value="id">
+                                    <div class="field">
+                                      <textarea rows="1" name="body" class="comment__field"></textarea>
+                                    </div>
+                                    <div class="form__buttons">
+                                      <input type="submit" disabled class="form__submit">
+                                    </div>
+                                  </form>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-content__item">
+                          <div class="user-summary"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                            <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span>
+                              <div class="user-summary__about">About user</div>
+                            </div>
+                          </div>
+                          <div class="answer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, totam quisquam inventore fugiat? Dolore dolor odit laborum. Dolores tempore laudantium, aut facilis cupiditate expedita, commodi accusantium facere, aliquam veritatis numquam.
+                            <ul class="question__attr">
+                              <li>Вопрос задан N часов назад</li>
+                            </ul>
+                            <div class="button-group"><a href="#" class="btn_like btn_like_liked">Нравится</a><a href="#" class="btn_comment-toogle"><span>5 комментариев</span></a>
+                              <div class="dropdown dropdown_settings">
+                                <button class="btn btn_settings btn_dott"></button>
+                              </div>
+                              <div class="dropdown dropdown_share"><a href="#">
+                                  <button class="btn btn_share icon-share"></button></a></div>
+                            </div>
+                            <div class="answer__comments">
+                              <ul class="list-content list-content_comments">
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-content__item comment">
+                                  <div class="comment__header">
+                                    <div class="user-summary user-summary_comment"><a href="#" class="user-summary__avatar"><img src="img/user1.png"></a>
+                                      <div class="user-summary__desc"><a href="#" class="user-summary__name">Username</a><span class="user-summary__nickname">@username</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="comment__body">
+                                    <div class="comment__body_inner">
+                                      <div class="comment__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto odio aliquam minima commodi!</div>
+                                      <div class="comment__date">Написано n часов назад</div>
+                                      <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
+                                        <div class="dropdown dropdown_settings">
+                                          <button class="btn btn_settings btn_dott"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-content__item comment_form">
+                                  <form id="answer_comments_id" class="form_comments">
+                                    <input type="hidden" name="answer_id" value="id">
+                                    <div class="field">
+                                      <textarea rows="1" name="body" class="comment__field"></textarea>
+                                    </div>
+                                    <div class="form__buttons">
+                                      <input type="submit" disabled class="form__submit">
+                                    </div>
+                                  </form>
                                 </li>
                               </ul>
                             </div>

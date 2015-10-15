@@ -40,7 +40,6 @@ class Question extends Model
 	public function getAnswersCountAttribute()
 	{
 		if (! $this->relationLoaded('answersCount')) $this->load('answersCount');
-
 		$related = $this->getRelation('answersCount');
 
 		return $related ? (int) $related->aggregate : 0;

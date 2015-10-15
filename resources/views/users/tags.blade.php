@@ -45,7 +45,9 @@
 								Вы подписаны<span class="subscribe_count">{{ $tag->subscribersCount }}</span>
 							</a>
 						@else
-							<a href="{{ route('tag.subscribe', ['slug' => $tag->slug]) }}" class="btn_subscribe">Подписаться<span class="subscribe_count">{{ $tag->subscribersCount }}</span></a>
+							<a href="{{ route('tag.subscribe', ['slug' => $tag->slug]) }}" class="btn_subscribe">
+								Подписаться<span class="subscribe_count">{{ $tag->subscribersCount }}</span>
+							</a>
 						@endif
 					</div>
 				</article>
