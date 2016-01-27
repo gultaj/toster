@@ -3,7 +3,7 @@
 <head>
     <title>@yield('title') - Tosber</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&amp;amp;subset=latin,cyrillic">
-    <link rel="stylesheet" href="{{ url('css/style.css') }}">
+    <link rel="stylesheet" href="{{ theme('css/style.css') }}">
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body>
@@ -38,7 +38,7 @@
 </div>
 
 {{-- @section('scripts') --}}
-    <script type="text/javascript" src="{{ url('js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ theme('js/app.js') }}"></script>
 {{-- @stop --}}
 
 </body>

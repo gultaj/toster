@@ -24,7 +24,8 @@
             "database"
         ],
         "files": [
-          "app/Helpers/language.php"
+          "app/Helpers/language.php",
+          "app/Helpers/theme.php"
         ],
         "psr-4": {
             "App\\": "app/"
