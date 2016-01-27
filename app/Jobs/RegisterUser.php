@@ -17,6 +17,7 @@ class RegisterUser extends Job implements SelfHandling
     public function __construct(Array $user_data)
     {
         $this->user_data = $user_data;
+        $this->user_data['avatar'] = '';
     }
 
     /**

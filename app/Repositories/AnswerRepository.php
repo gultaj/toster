@@ -18,4 +18,5 @@ class AnswerRepository extends Repository
 	{
 		$this->model->likes()->attach($user_id);
 	}
+	
 }

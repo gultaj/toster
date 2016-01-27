@@ -12,6 +12,11 @@ use App\Models\Question;
 
 class CommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function comment(Request $request)
     {
     	if ($request->has('answer_id')) {
