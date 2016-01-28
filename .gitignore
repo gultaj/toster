@@ -8,3 +8,4 @@ tests/_output/*
 *.sublime-project
 *.sublime-workspace
 .vscode/
+bower_components/

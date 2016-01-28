@@ -14,6 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        
         $this->app['view']->setFinder($this->app['theme.finder']);
 
         view()->composer('*', function($view){
@@ -31,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('theme.finder', function($app) {
             $finder = new ThemeViewFinder($app['files'], $app['config']['view.paths']);
 
-            $config = $app['config']['theme'];
+            $config = $this->app->request->segment(1) == 'admin' ? $app['config']['theme.admin'] : $app['config']['theme'];
 
             $finder->setBasePath($app['path.public'] . '/' . $config['folder']);
             $finder->setActiveTheme($config['active']);

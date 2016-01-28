@@ -3,6 +3,10 @@
 return [
 
 	'folder' => 'themes',
-	'active' => 'default'
+	'active' => 'default',
+	'admin' => [
+		'folder' => 'themes',
+		'active' => 'admin'
+	],
 
 ];
