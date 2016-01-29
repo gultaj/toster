@@ -11,16 +11,17 @@ settings:
     memory_limit: 1024M
 extensions:
     enabled:
+        - Codeception\Extension\Phantoman
         - Codeception\Extension\RunFailed
 modules:
     config:
         Db:
-            dsn: 'mysql:host=localhost;port=33060;dbname=homestead'
-            user: 'homestead'
-            password: 'secret'
+            dsn: 'mysql:host=localhost;port=3306;dbname=homestead'
+            user: 'root'
+            password: ''
             dump: tests/_data/dump.sql
         Dbh:
-            dsn: 'mysql:host=localhost;port=33060;dbname=homestead'
-            user: 'homestead'
-            password: 'secret'
+            dsn: 'mysql:host=localhost;port=3306;dbname=homestead'
+            user: 'root'
+            password: ''
             dump: tests/_data/dump.sql

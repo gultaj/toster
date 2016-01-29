@@ -7,13 +7,14 @@
 class_name: AcceptanceTester
 modules:
     enabled:
-        - WebDriver:
-            url: 'http://toster.dev:8080'
-            browser: firefox
-            window_size: 1024x768
-            wait: 10
-        - PhpBrowser:
-            url: http://toster.dev:8080
-        - \Helper\Acceptance
+        - WebDriver
         - Laravel5
+        - \Helper\Acceptance
         - Asserts
+    config:
+        WebDriver:
+            url: 'http://tosber.dev'
+            browser: firefox
+            capabilities:
+                unexpectedAlertBehaviour: 'accept'
+                # phantomjs.cli.args: ['--ignore-ssl-errors=true']
