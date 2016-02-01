@@ -38,9 +38,13 @@
 				            <tbody>
 				            	@foreach($questions as $i => $question)
 				                <tr role="row" class="{{ ($i & 1) ? 'odd' : 'even' }}">
-				                	<td>{{ ++$i + $questions->perPage() * ($questions->currentPage()-1) }}</td>
+				                	<td>
+				                		{{ ++$i + $questions->perPage() * ($questions->currentPage()-1) }}
+				                	</td>
 				                  	<td class="sorting_1">
 				                  		<a href="{{ route('admin.q.edit', ['id'=> $question->id]) }}">{{ $question->title}}</a>
+				                		<a href="" class="btn btn-xs bg-danger pull-right"><i class="glyphicon glyphicon-trash"></i></a>
+				                		<a href="" class="btn btn-xs bg-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
 				                  	</td>
 				                  	<td>
 				                  		@foreach ($question->tags as $tag) 
