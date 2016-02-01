@@ -98,13 +98,17 @@ gulp.task('stylus:build', function () {
 
 var js_files = [
     './node_modules/admin-lte/plugins/jQuery/jQuery-2.1.4.min.js',
+    './node_modules/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
     './node_modules/admin-lte/bootstrap/js/bootstrap.min.js',
-    './node_modules/admin-lte/dist/js/app.min.js'
+    './node_modules/admin-lte/dist/js/app.min.js',
+    './node_modules/admin-lte/plugins/select2/select2.full.min.js'
 ];
 var css_files = [
     './node_modules/admin-lte/bootstrap/css/bootstrap.min.css',
+    './node_modules/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
     './node_modules/admin-lte/dist/css/AdminLTE.min.css',
-    './node_modules/admin-lte/dist/css/skins/skin-blue.min.css'
+    './node_modules/admin-lte/dist/css/skins/skin-blue.min.css',
+    './node_modules/admin-lte/plugins/select2/select2.min.css'
 ];
 
 gulp.task('copy:js', function() {
@@ -116,6 +120,9 @@ gulp.task('copy:css', ['copy:js'], function() {
 });
 gulp.task('copy:img', ['copy:css'], function() {
     return gulp.src('./node_modules/admin-lte/dist/img/*').pipe(gulp.dest('./public/themes/admin/assets/img/'));
+});
+gulp.task('copy:dir', ['copy:img'], function() {
+    return gulp.src('./node_modules/admin-lte/bootstrap/fonts/*').pipe(gulp.dest('./public/themes/admin/assets/fonts/'));
 });
 
 
@@ -132,4 +139,4 @@ gulp.task('watch', ['connect', 'stylus:connect', 'jade', 'watch:connect']);
 
 gulp.task('build', ['stylus:build', 'jade:build', 'imagemin']);
 
-gulp.task('copy', ['copy:js', 'copy:css', 'copy:img']);
+gulp.task('copy', ['copy:js', 'copy:css', 'copy:img', 'copy:dir']);

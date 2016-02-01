@@ -1,6 +1,7 @@
 <?php
 namespace admin;
 use \AcceptanceTester;
+use \App\Models\Question;
 
 class QuestionsCest
 {
@@ -15,10 +16,20 @@ class QuestionsCest
     // tests
     public function showList(AcceptanceTester $I)
     {
-        $q = \App\Models\Question::orderBy('created_at', 'desc')->first();
+        $q = Question::orderBy('created_at', 'desc')->first();
 
         $I->wantTo('show question list');
         $I->amOnRoute('admin.q');
         $I->see(htmlentities($q->title));
+    }
+
+    public function editItem(AcceptanceTester $I)
+    {
+        $q = Question::get()->random();
+
+        $I->wantTo('show edit page');
+        $I->amOnRoute('admin.q.edit', ['id' => $q->id]);
+        $I->seeInField('title', $q->title);
+
     }
 }
