@@ -42,9 +42,12 @@
 					                  	<td class="sorting_1" style="position: relative;padding-right:65px;">
 					                  		<a href="{{ route('admin.q.edit', ['id'=> $question->id]) }}">{{ $question->title}}</a>
 					                		<div class="pull-right buttons_group">
-					                			<a href="" class="text-blue"><i class="glyphicon glyphicon-eye-open"></i></a>
-					                			<a href="{{ route('admin.q.edit', ['id'=> $question->id]) }}" class="text-yellow"><i class="glyphicon glyphicon-pencil"></i></a>
-					                			<a href="" class="text-red"><i class="glyphicon glyphicon-trash"></i></a>
+					                			<a href="{{ route('q', ['id' => $question->id]) }}" class="text-blue">
+					                				<i class="glyphicon glyphicon-eye-open"></i></a>
+					                			<a href="{{ route('admin.q.edit', ['id'=> $question->id]) }}" class="text-yellow">
+					                				<i class="glyphicon glyphicon-pencil"></i></a>
+					                			<a href="{{ route('admin.q.destroy', ['id'=> $question->id]) }}" class="text-red">
+					                				<i class="glyphicon glyphicon-trash"></i></a>
 					                		</div>
 					                  	</td>
 					                  	<td>
