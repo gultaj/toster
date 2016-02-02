@@ -52,10 +52,12 @@
 												<a href="#">{{ $tag->title }}</a>,
 											@endforeach
 					                  	</td>
-					                  	<td>{{ $question->answersCount }}</td>
+					                  	<td class="text-center">{{ $question->answersCount }}</td>
 					                  	<td><a href="#">{{ '@'.$question->user->nickname }}</a></td>
 					                  	<td>{{ $question->created_at }}</td>
-					                  	<td>{{ $question->is_resolved }}</td>
+					                  	<td class="text-center">
+					                  		{!! $question->is_resolved ? '<i class="glyphicon glyphicon-ok-sign text-green"></i>' : '' !!}
+					                  	</td>
 					                </tr>
 				                @endforeach
 	                		</tbody>
