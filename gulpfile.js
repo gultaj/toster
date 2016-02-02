@@ -9,17 +9,22 @@ var gulp = require('gulp'),
     cssmin = require('gulp-cssmin'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    argv = require('yargs');
+
+var theme = 'default';
+
+if (gulp.env.admin) theme = 'admin';
 
 var path = {
-    src: 'resources/assets/',
-    dest: 'public/'
+    src: './resources/assets/' + theme + '/',
+    dest: './public/themes/' + theme + '/assets/'
 };
 
 // DEFAULT
 
 gulp.task('stylus', function () {
-    gulp.src(path.src + 'stylus/*.styl')
+    return gulp.src(path.src + 'stylus/*.styl')
     .pipe(sourcemaps.init())
     .pipe(stylus({'include css': true}))
     .pipe(sourcemaps.write())
@@ -137,6 +142,6 @@ gulp.task('concat', function () {
 gulp.task('default', ['stylus', 'js', 'watch:stylus']);
 gulp.task('watch', ['connect', 'stylus:connect', 'jade', 'watch:connect']);
 
-gulp.task('build', ['stylus:build', 'jade:build', 'imagemin']);
+gulp.task('build', ['stylus:build', 'imagemin']);
 
 gulp.task('copy', ['copy:js', 'copy:css', 'copy:img', 'copy:dir']);

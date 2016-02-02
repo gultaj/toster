@@ -1,0 +1,14 @@
+.buttons_group {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: none;
+}
+.buttons_group > a {
+  margin-left: 5px;
+}
+.hover_buttons tr:hover .buttons_group {
+  display: block;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkbWluLXN0eWxlLnN0eWwiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDQyxVQUFTLFNBQVQ7RUFDQSxPQUFNLEtBQU47RUFDQSxLQUFJLEtBQUo7RUFDQSxTQUFRLEtBQVI7O0FBQ0E7RUFDQyxhQUFZLElBQVo7O0FBSUM7RUFDQyxTQUFRLE1BQVIiLCJmaWxlIjoiYWRtaW4tc3R5bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJ1dHRvbnNfZ3JvdXBcclxuXHRwb3NpdGlvbiBhYnNvbHV0ZVxyXG5cdHJpZ2h0IDEwcHhcclxuXHR0b3AgMTBweFxyXG5cdGRpc3BsYXkgbm9uZVxyXG5cdCYgPiBhXHJcblx0XHRtYXJnaW4tbGVmdCA1cHhcclxuLmhvdmVyX2J1dHRvbnNcclxuXHR0clxyXG5cdFx0Jjpob3ZlclxyXG5cdFx0XHQuYnV0dG9uc19ncm91cFxyXG5cdFx0XHRcdGRpc3BsYXkgYmxvY2tcclxuXHQiXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */

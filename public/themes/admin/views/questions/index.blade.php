@@ -35,29 +35,28 @@
 					            	<th class="sorting" aria-controls="example2" rowspan="1" colspan="1">Решён</th>
 					            </tr>
 				            </thead>
-				            <tbody>
+				            <tbody class="hover_buttons">
 				            	@foreach($questions as $i => $question)
-				                <tr role="row" class="{{ ($i & 1) ? 'odd' : 'even' }}">
-				                	<td>
-				                		{{ ++$i + $questions->perPage() * ($questions->currentPage()-1) }}
-				                	</td>
-				                  	<td class="sorting_1">
-				                  		<a href="{{ route('admin.q.edit', ['id'=> $question->id]) }}">{{ $question->title}}</a>
-				                		<a href="" class="btn btn-xs bg-danger pull-right"><i class="glyphicon glyphicon-trash"></i></a>
-				                		<a href="" class="btn btn-xs bg-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-				                  	</td>
-				                  	<td>
-				                  		@foreach ($question->tags as $tag) 
-				                  		
-											<a href="#">{{ $tag->title }}</a>,
-
-										@endforeach
-				                  	</td>
-				                  	<td>{{ $question->answersCount }}</td>
-				                  	<td><a href="#">{{ '@'.$question->user->nickname }}</a></td>
-				                  	<td>{{ $question->created_at }}</td>
-				                  	<td>{{ $question->is_resolved }}</td>
-				                </tr>
+					                <tr role="row" class="{{ ($i & 1) ? 'odd' : 'even' }}">
+					                	<td>{{ $i + $pagination->from() }}</td>
+					                  	<td class="sorting_1" style="position: relative;padding-right:65px;">
+					                  		<a href="{{ route('admin.q.edit', ['id'=> $question->id]) }}">{{ $question->title}}</a>
+					                		<div class="pull-right buttons_group">
+					                			<a href="" class="text-blue"><i class="glyphicon glyphicon-eye-open"></i></a>
+					                			<a href="{{ route('admin.q.edit', ['id'=> $question->id]) }}" class="text-yellow"><i class="glyphicon glyphicon-pencil"></i></a>
+					                			<a href="" class="text-red"><i class="glyphicon glyphicon-trash"></i></a>
+					                		</div>
+					                  	</td>
+					                  	<td>
+					                  		@foreach ($question->tags as $tag) 
+												<a href="#">{{ $tag->title }}</a>,
+											@endforeach
+					                  	</td>
+					                  	<td>{{ $question->answersCount }}</td>
+					                  	<td><a href="#">{{ '@'.$question->user->nickname }}</a></td>
+					                  	<td>{{ $question->created_at }}</td>
+					                  	<td>{{ $question->is_resolved }}</td>
+					                </tr>
 				                @endforeach
 	                		</tbody>
 	                		<tfoot>

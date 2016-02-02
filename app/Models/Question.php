@@ -10,6 +10,8 @@ class Question extends Model
 {
 	use SubscribersModel;
 
+	protected $fillable = ['title', 'body'];
+
 	public function answers()
 	{
 		return $this->hasMany('App\Models\Answer');

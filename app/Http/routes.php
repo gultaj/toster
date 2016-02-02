@@ -7,8 +7,9 @@ Route::get('/', ['as' => 'home', 'uses' => 'QuestionsController@index']);
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
 	get('/', ['as' => 'admin', 'uses' => 'DashboardController@index']);
-	get('/q', ['as' => 'admin.q', 'uses' => 'QuestionsController@index']);
-	get('/q/{id}', ['as' => 'admin.q.edit', 'uses' => 'QuestionsController@edit'])->where(['id' => '[0-9]+']);
+	// get('/q', ['as' => 'admin.q', 'uses' => 'QuestionsController@index']);
+	// get('/q/{id}', ['as' => 'admin.q.edit', 'uses' => 'QuestionsController@edit'])->where(['id' => '[0-9]+']);
+	Route::resource('q', 'QuestionsController');
 });
 
 get('/q/{id}', ['as' => 'q', 'uses' => 'QuestionsController@show'])->where(['id' => '[0-9]+']);

@@ -22,6 +22,7 @@
                   apply the skin class to the body tag so the changes take effect.
             -->
             <link href="{{ theme('css/skin-blue.min.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ theme('css/admin-style.css') }}" rel="stylesheet" type="text/css" />
         @show
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -116,6 +117,8 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+
+
 
             <!-- Content Header (Page header) -->
             <section class="content-header">
