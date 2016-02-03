@@ -3,14 +3,14 @@
 @section('title', 'Редактирование вопроса')
 
 @section('header')
-<h1>Редактирование вопроса
-	<small><a class="btn btn-xs btn-flat btn-info" href="{{ route('q', ['id' => $question->id]) }}">Просмотреть</a></small>
-</h1>
-<ol class="breadcrumb">
-	<li><a href="{{ route('admin') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-	<li><a href="{{ route('admin.q.index') }}">Вопросы</a></li>
-	<li class="active">{{ mb_substr($question->title, 0, 30) }}...</li>
-</ol>
+	<h1>Редактирование вопроса 
+		<a class="btn btn-xs btn-default" href="{{ route('q', ['id' => $question->id]) }}">Просмотреть</a>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="{{ route('admin') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+		<li><a href="{{ route('admin.q.index') }}">Вопросы</a></li>
+		<li class="active">{{ mb_substr($question->title, 0, 30) }}...</li>
+	</ol>
 @endsection
 
 @section('content')
@@ -19,34 +19,7 @@
 	<div class="col-xs-9">
 		@include('partials.flash')
 		<div class="box box-primary">
-			<form role="form" lpformnum="1" method="POST" action="{{ route('admin.q.update', ['id' => $question->id]) }}">
-				{{ method_field('PUT') }}
-				<input type="hidden" name="_token" value="{{ csrf_token() }}">
-				<div class="box-body">
-					<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-						<label for="title">Заголовок</label>
-						<input type="text" class="form-control" name="title" id="title" value="{{ $question->title }}">
-						{!! $errors->first('title', '<p class="text-danger">:message</p>') !!}
-					</div>
-					<div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
-						<label for="body">Описание</label>
-						<textarea class="textarea" id="body" rows='15' name="body" style="width: 100%">{{ $question->body }}</textarea>	
-						{!! $errors->first('body', '<p class="text-danger">:message</p>') !!}				
-					</div>
-					<div class="form-group {{ $errors->has('tag_id') ? 'has-error' : '' }}">
-						<label for="tags">Теги</label>
-						<select id="tags" name="tag_id[]" class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="" style="width: 100%;" tabindex="-1" aria-hidden="true">
-							@foreach($tags as $tag)
-			                	<option {{ $question->tags->contains($tag) ? 'selected' : '' }} value={{ $tag->id }}>{{ $tag->title }}</option>
-							@endforeach
-		                </select>
-		                {!! $errors->first('tag_id', '<p class="text-danger">:message</p>') !!}
-					</div>
-				</div>
-				<div class="box-footer">
-					<button type="submit" class="btn btn-primary">Сохранить</button>
-				</div>
-			</form>
+			@include('questions.partials.form')
 		</div>
 	</div>
 	<div class="col-xs-3">

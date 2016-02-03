@@ -37,4 +37,15 @@ class QuestionRequest extends Request
 
         parent::failedValidation($validator);
     }
+
+    public function messages()
+    {
+    	return [
+    		'tag_id.required' => 'У вопроса не может быть меньше одного тега!',
+    		'title.required' => 'Поле Заголовок не может быть путым!',
+			'title.between' => 'Поле Заголовок должно содержать не менее 15 и не более 100 символов!',
+    		'body.required' => 'Поле Описание не может быть пустым',
+			'body.min' => 'Поле Описание не может содержать меньше 50 символов'
+    	];
+    }
 }

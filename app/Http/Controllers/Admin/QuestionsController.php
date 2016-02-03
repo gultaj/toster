@@ -20,7 +20,7 @@ class QuestionsController extends Controller
      */
     public function index()
     {
-        $questions = Question::with('tags', 'user', 'answersCount')->orderBy('created_at', 'desc')->paginate(15);
+        $questions = Question::with('tags', 'user', 'answersCount')->orderBy('created_at', 'desc')->paginate(20);
         $pagination = new AdminPaginator($questions);
 
         return view('questions.index')->with(['questions' => $questions, 'pagination' => $pagination]);

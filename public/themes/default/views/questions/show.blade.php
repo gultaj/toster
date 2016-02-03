@@ -31,7 +31,7 @@
 					@endforelse
 				</ul>
 				<h2 class="question__title">{{ $question->title }}</h2>
-				<p class="question__text">{{ $question->body }}</p>
+				<p class="question__text">{!! $question->body !!}</p>
 				<ul class="question__attr">
 					<li>Вопрос задан {{ $question->created_at->diffForHumans() }}</li>
 					<li>{{ $question->veiwCountHumans }}</li>

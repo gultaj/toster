@@ -13,7 +13,8 @@
         "kalnoy/illuminate-menu": "^1.1",
         "codeception/codeception": "2.1.2",
         "site5/phantoman": "*",
-        "jakoch/phantomjs-installer": "*"
+        "jakoch/phantomjs-installer": "*",
+        "overtrue/laravel-lang": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

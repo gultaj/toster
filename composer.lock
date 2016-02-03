@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f73ee46c16667ad10792c45dcd166e5b",
-    "content-hash": "adef3a68e27981d606bb323eafd34bc5",
+    "hash": "b6b05c976c1f6c82cb6d744a617c403e",
+    "content-hash": "c754de3f45ce51aa7f01b4f10460b433",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -123,6 +123,46 @@
                 "sublime"
             ],
             "time": "2015-12-21 19:48:06"
+        },
+        {
+            "name": "caouecs/laravel4-lang",
+            "version": "2.0.31",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/caouecs/Laravel-lang.git",
+                "reference": "bcce0e810b19be37592b55572f36032a4c9b9468"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/caouecs/Laravel-lang/zipball/bcce0e810b19be37592b55572f36032a4c9b9468",
+                "reference": "bcce0e810b19be37592b55572f36032a4c9b9468",
+                "shasum": ""
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "^1.10"
+            },
+            "suggest": {
+                "overtrue/laravel-lang": "Command to add languages in your project"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "caouecs",
+                    "email": "caouecs@caouecs.net"
+                }
+            ],
+            "description": "Languages for Laravel",
+            "keywords": [
+                "lang",
+                "languages",
+                "laravel",
+                "lpm"
+            ],
+            "time": "2016-01-27 20:44:50"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -1450,6 +1490,47 @@
                 "php"
             ],
             "time": "2015-09-19 14:15:08"
+        },
+        {
+            "name": "overtrue/laravel-lang",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/overtrue/laravel-lang.git",
+                "reference": "a8c8bbe91e03781d1b06851a3e33b6cdd4598827"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/overtrue/laravel-lang/zipball/a8c8bbe91e03781d1b06851a3e33b6cdd4598827",
+                "reference": "a8c8bbe91e03781d1b06851a3e33b6cdd4598827",
+                "shasum": ""
+            },
+            "require": {
+                "caouecs/laravel4-lang": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Overtrue\\LaravelLang\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "overtrue",
+                    "email": "anzhengchao@gmail.com"
+                }
+            ],
+            "description": "List of 37 languages for Laravel 5",
+            "keywords": [
+                "languages",
+                "laravel",
+                "overtrue"
+            ],
+            "time": "2015-07-23 01:42:49"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -3863,7 +3944,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "overtrue/laravel-lang": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
