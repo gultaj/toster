@@ -19,7 +19,7 @@ class QuestionsCest
         $q = Question::orderBy('created_at', 'desc')->first();
 
         $I->wantTo('show question list');
-        $I->amOnRoute('admin.q');
+        $I->amOnRoute('admin.q.index');
         $I->see(htmlentities($q->title));
     }
 

@@ -16,13 +16,13 @@
 @section('content')
 
 <div class="row">
-	<div class="col-xs-9">
+	<div class="col-md-8 col-lg-9">
 		@include('partials.flash')
 		<div class="box box-primary">
 			@include('questions.partials.form')
 		</div>
 	</div>
-	<div class="col-xs-3">
+	<div class="col-md-4 col-lg-3">
 		<div class="box box-primary widget-user-2">
 			<div class="widget-user-header">
 				<div class="widget-user-image">
@@ -35,6 +35,7 @@
 			<div class="box-footer no-padding">
 				<ul class="nav nav-stacked">
 			    	<li><a>Дата создания <span class="pull-right">{{ $question->created_at }}</span></a></li>
+			    	<li><a>Дата обновления <span class="pull-right">{{ $question->updated_at }}</span></a></li>
 				</ul>
 			</div>
 		</div>

@@ -6,7 +6,7 @@
 	    	<th class="sorting" aria-controls="example2" rowspan="1" colspan="1">Теги</th>
 	    	<th class="sorting" aria-controls="example2" rowspan="1" colspan="1">Ответы</th>
 	    	<th class="sorting" aria-controls="example2" rowspan="1" colspan="1">Автор</th>
-	    	<th class="sorting" aria-controls="example2" rowspan="1" colspan="1">Дата</th>
+	    	<th style="min-width:135px;" class="sorting" aria-controls="example2" rowspan="1" colspan="1">Дата</th>
 	    	<th class="sorting" aria-controls="example2" rowspan="1" colspan="1">Решён</th>
 	    </tr>
 	</thead>
