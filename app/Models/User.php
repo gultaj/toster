@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
-	use Authenticatable, CanResetPassword;
+	use Authenticatable, CanResetPassword, Notifiable;
 
 	/**
 	 * The database table used by the model.
@@ -69,7 +70,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public function setPasswordAttribute($password)
 	{
-		$this->attributes['password'] = \Hash::make($password);
+		//$this->attributes['password'] = bcrypt($password);
 	}
 
 	public function setAvatarAttribute()
@@ -104,4 +105,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 		return 0;
 	}
+
+	public function getRouteKeyName()
+    {
+        return 'nickname';
+    }
 }

@@ -15,18 +15,23 @@ class AnswerLikesTableSeeder extends Seeder
 
         $users = App\Models\User::get();
 
-        App\Models\Answer::all()->each(function($answer) use ($users) {
+        App\Models\Answer::get()->each(function($answer) use ($users) {
 
         	if (rand(0, 10) < 6) return;
 
-    		$random_users = ($count = rand(1, 5)) ? $users->random($count) : [];
+//    		$random_users = ($count = rand(1, 5)) ? $users->random($count) : [];
+//
+//    		$random_users = ($count==1) ? [$random_users] : $random_users->all();
+//
+//        	foreach ($random_users as $user) {
+//        		if ($answer->user->id == $user->id) continue;
+//	        	$answer->likes()->attach($user->id);
+//        	}
 
-    		$random_users = ($count==1) ? [$random_users] : $random_users->all();
-
-        	foreach ($random_users as $user) {
-        		if ($answer->user->id == $user->id) continue;
-	        	$answer->likes()->attach($user->id); 
-        	}
+            $users->random(rand(1, 5))->each(function($user) use ($answer) {
+                if ($answer->user->id == $user->id) return;
+	        	$answer->likes()->attach($user->id);
+            });
         });
 
     }

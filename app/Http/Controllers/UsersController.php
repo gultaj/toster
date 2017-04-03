@@ -9,59 +9,49 @@ use App\Http\Controllers\Controller;
 
 class UsersController extends Controller
 {
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
+
+    /**
+     * Display the specified resource.
+     *
+     * @param User $user
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @internal param int $id
+     */
+	public function info(User $user)
 	{
-		//
+		return view('users.show', [
+		    'user' => $user,
+            'menu_items' => $this->buildMenu($user)
+        ]);
 	}
 
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function getInfo($nickname)
+	public function questions(User $user)
 	{
-		$user = User::where('nickname', $nickname)->first();
-
-		return view('users.show', compact('user'))->with('menu_items', $this->buildMenu($user));
-	}
-
-	public function getQuestions($nickname)
-	{
-		$user = User::where('nickname', $nickname)->first();
 		$questions = $user->questions()->with('tags', 'answersCount', 'subscribers')->paginate(15);
 
-		return view('users.questions', compact('questions', 'user'))->with('menu_items', $this->buildMenu($user));
+		return view('users.questions', [
+		    'questions' => $questions,
+            'user' => $user,
+            'menu_items' => $this->buildMenu($user)
+        ]);
 
 	}
 
-	public function getAnswers($nickname)
+	public function answers(User $user)
 	{
-		$user = User::where('nickname', $nickname)->first();
-
 		$answers = $user->answers()->with('question', 'commentsCount', 'likes')->paginate(15);
 
-		return view('users.answers', compact('user', 'answers'))->with('menu_items', $this->buildMenu($user));
+		return view('users.answers', [
+		    'user' => $user,
+            'answers' => $answers,
+            'menu_items' => $this->buildMenu($user)
+        ]);
 
 		
 	}
 
-	public function getTags($nickname)
+	public function tags(User $user)
 	{
-
-		
-
-    
-		$user = User::where('nickname', $nickname)->first();
-
-
 		$tags = $user->subscribedTags()->with(['subscribers', 'subscribersCount',
 			'questionsCount' => function($query) use ($user) {
 				$query->where('user_id', $user->id);
@@ -95,7 +85,7 @@ class UsersController extends Controller
 		]);
 	}
 
-	public function getSubscribes($nickname)
+	public function subscribes($nickname)
 	{
 
 

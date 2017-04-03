@@ -2,16 +2,17 @@
 
 namespace App\Jobs;
 
-use App\Jobs\Job;
+
 use App\Models\Question;
+use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class IncrementViewQuestion extends Job implements SelfHandling, ShouldQueue
+class IncrementViewQuestion implements ShouldQueue
 {
-    use InteractsWithQueue, SerializesModels;
+    use InteractsWithQueue, SerializesModels, Queueable;
 
     protected $questionRepo;
 

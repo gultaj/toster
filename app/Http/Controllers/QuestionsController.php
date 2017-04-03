@@ -26,7 +26,9 @@ class QuestionsController extends Controller
         $questions = $this->question->index();
         //$questions->setPath('questions/latest/');
 
-        return view('questions.index', compact('questions'));
+        return view('questions.index', [
+            'questions' => $questions
+        ]);
     }
 
     /**

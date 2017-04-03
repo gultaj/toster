@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(App\Models\User::class, function ($faker) {
+$factory->define(App\Models\User::class, function (Faker\Generator $faker) {
 
     $faker->addProvider(new Faker\Provider\ru_RU\Text($faker));
     $faker->addProvider(new Faker\Provider\ru_RU\Person($faker));
@@ -29,7 +29,7 @@ $factory->define(App\Models\User::class, function ($faker) {
     ];
 });
 
-$factory->define(App\Models\Question::class, function($faker) {
+$factory->define(App\Models\Question::class, function(Faker\Generator $faker) {
 
     $faker->addProvider(new Faker\Provider\ru_RU\Text($faker));
     return [
@@ -39,7 +39,7 @@ $factory->define(App\Models\Question::class, function($faker) {
     ];
 });
 
-$factory->define(App\Models\Answer::class, function($faker) {
+$factory->define(App\Models\Answer::class, function(Faker\Generator $faker) {
 
     $faker->addProvider(new Faker\Provider\ru_RU\Text($faker));
     return [

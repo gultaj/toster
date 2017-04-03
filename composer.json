@@ -6,21 +6,22 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.1.8",
-        "barryvdh/laravel-debugbar": "^2.0",
-        "laravelcollective/html": "^5.1",
-        "barryvdh/laravel-ide-helper": "^2.0",
-        "kalnoy/illuminate-menu": "^1.1",
-        "codeception/codeception": "2.1.2",
-        "site5/phantoman": "*",
-        "jakoch/phantomjs-installer": "*",
+        "igaster/laravel-theme": "^1.1",
+        "laravel/framework": "5.4.*",
+        "laravel/tinker": "~1.0",
         "overtrue/laravel-lang": "dev-master"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^2.0",
+        "barryvdh/laravel-ide-helper": "^2.3",
+        "codeception/codeception": "^2.1.2",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1"
+        "phpunit/phpunit": "~5.0",
+        "symfony/dom-crawler": "^3.2",
+        "symfony/css-selector": "^3.2",
+        "site5/phantoman": "*",
+        "jakoch/phantomjs-installer": "*"
     },
     "autoload": {
         "classmap": [
@@ -42,15 +43,12 @@
     "scripts": {
         "post-install-cmd": [
             "PhantomInstaller\\Installer::installPhantomJS",
-            "php artisan clear-compiled",
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan optimize"
-        ],
-        "pre-update-cmd": [
-            "php artisan clear-compiled"
         ],
         "post-update-cmd": [
             "PhantomInstaller\\Installer::installPhantomJS",
-            "php artisan ide-helper:generate -M",
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
         ],
         "post-root-package-install": [
@@ -62,6 +60,7 @@
     },
     "config": {
         "preferred-install": "dist",
+        "sort-packages": true,
         "bin-dir": "vendor/bin"
     }
 }

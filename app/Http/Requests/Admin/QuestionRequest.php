@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests\Admin;
 
-use App\Http\Requests\Request;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Foundation\Http\FormRequest;
 
-class QuestionRequest extends Request
+class QuestionRequest extends FormRequest
 {
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -42,7 +42,7 @@ class QuestionRequest extends Request
     {
     	return [
     		'tag_id.required' => 'У вопроса не может быть меньше одного тега!',
-    		'title.required' => 'Поле Заголовок не может быть путым!',
+    		'title.required' => 'Поле Заголовок не может быть пустым!',
 			'title.between' => 'Поле Заголовок должно содержать не менее 15 и не более 100 символов!',
     		'body.required' => 'Поле Описание не может быть пустым',
 			'body.min' => 'Поле Описание не может содержать меньше 50 символов'
