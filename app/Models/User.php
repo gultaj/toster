@@ -81,6 +81,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->first_name . ' ' . $this->last_name;
 	}
 
+	public function getAvatarAttribute()
+	{
+		//if(is_null($this->avatar)) {
+			return 'img/user1.png';
+		//}
+		//return $this->avatar;
+	}
+
 	public function questionsCount()
 	{
 		return $this->subscribers()

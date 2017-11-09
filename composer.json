@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
+        "doctrine/dbal": "^2.6",
         "igaster/laravel-theme": "^1.1",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",

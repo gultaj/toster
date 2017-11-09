@@ -2,9 +2,10 @@
 	<div class="navbar__logo"><a href="{{ route('home') }}">Tosber</a></div>
 	<div class="panel">
 		<div class="panel__wrapper">
-			<a class="panel-user user-logged" href="{{ route('user', ['nickname' => Auth::user()->nickname]) }}">
-				<img class="panel-user__avatar" src="{{ url(Auth::user()->avatar) }}"> 
+			<a class="panel-user user-logged" href="{{ route('user', $currentUser) }}">
+				<img class="panel-user__avatar" src="{{ url($currentUser->avatar) }}"> 
 				{{ $currentUser->nickname }} </a>
+				
 			<button class="panel-arrow" ><i class="icon-down-open" role="panel-list-opening"></i></button>
 		</div>
 		<ul class="panel-list">

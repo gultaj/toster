@@ -17,7 +17,7 @@ class CreateTagsTable extends Migration
             $table->string('title', 20)->unique();
             $table->string('slug', 25)->unique();
             $table->string('description');
-            $table->string('icon');
+            $table->string('icon')->nullable();
             $table->timestamps();
         });
     }
