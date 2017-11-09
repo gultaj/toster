@@ -18,9 +18,10 @@ class CommentsTableSeeder extends Seeder
         $users = App\Models\User::all();
 
     	$list->each(function($item) use ($users) {
-			for ($i = 0, $count = rand(0, 5); $i < $count; $i++) {                 
-				$item->comments()->save($comment = factory('App\Models\Comment')->create());
-                $comment->user()->associate($users->random())->save();
+			for ($i = 0, $count = rand(0, 5); $i < $count; $i++) {   
+                $comment = factory('App\Models\Comment')->make();
+                $comment->user_id = $users->random()->id;             
+				$item->comments()->save($comment);
 			}
     	});
     }

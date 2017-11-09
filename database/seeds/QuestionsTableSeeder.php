@@ -16,7 +16,7 @@ class QuestionsTableSeeder extends Seeder
 
         $users = App\Models\User::all();
 
-        factory('App\Models\Question', 200)->create()->each(function($question) use ($users) {
+        factory('App\Models\Question', 200)->make()->each(function($question) use ($users) {
 
             $question->user()->associate($users->random())->save();
 

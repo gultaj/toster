@@ -12,7 +12,7 @@
 */
 
 $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
-
+    static $password;
     $faker->addProvider(new Faker\Provider\ru_RU\Text($faker));
     $faker->addProvider(new Faker\Provider\ru_RU\Person($faker));
 
@@ -21,7 +21,7 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
         'last_name' => $faker->lastName,
         'nickname' => str_slug($faker->unique()->userName),
         'email' => $faker->unique()->email,
-        'password' => 'secret',
+        'password' => $password ?: $password = bcrypt('secret'),
         'about' => $faker->realText(rand(10, 50), 5),
         'about_long' => $faker->realText(rand(50, 200), 5),
         'avatar' => 'img/user' . rand(1, 4) . '.png',

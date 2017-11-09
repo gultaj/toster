@@ -10,7 +10,7 @@ class Tag extends Model
 {
     use SubscribersModel;
 
-	protected $fillable = ['title', 'slug', 'description'];
+	protected $fillable = ['title', 'slug', 'description', 'icon'];
 
 	public function questions()
 	{

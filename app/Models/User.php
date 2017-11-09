@@ -68,11 +68,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->morphedByMany('App\Models\Question', 'subscribe');
 	}
 
-	public function setPasswordAttribute($password)
-	{
-		//$this->attributes['password'] = bcrypt($password);
-	}
-
 	public function setAvatarAttribute()
 	{
 		$this->attributes['avatar'] = 'img/user1.png';
