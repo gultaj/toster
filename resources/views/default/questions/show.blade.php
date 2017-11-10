@@ -60,13 +60,14 @@
 					</div>
 				</div>
 				<div class="answer__comments">
-					<ul class="list-content list-content_comments">
+					{{--  <ul class="list-content list-content_comments">
 
 						@each('comments.show', $question->comments, 'comment')
 
 						@include('comments.form', ['typeId' => $question->id, 'commentType' => 'question'])
 						
-					</ul>
+					</ul>  --}}
+					<comment-list :data="{{ $question->comments }}"></comment-list>
 				</div>
 			</div>
 			<div class="question__additional" id="answers">
@@ -89,5 +90,9 @@
 			</div>
 		</div>
 	</div>
+	
+@stop
 
+@section('scripts')
+	<script src="{{ mix('js/app.js') }}"></script>
 @stop
