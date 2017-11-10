@@ -21,7 +21,7 @@
         @include('partials.nav.guest')
     @endif
 
-    <div class="body">
+    <div class="body" id="app">
         <div class="body__wrapper">
 
             @include('partials.header')
@@ -43,9 +43,10 @@
     </div>
 </div>
 
-{{-- @section('scripts') --}}
+@section('scripts')
     <script type="text/javascript" src="{{ theme('js/app.js') }}"></script>
-{{-- @stop --}}
+@stop
+<script src="{{ mix('js/app.js') }}"></script>
 
 </body>
 </html>
