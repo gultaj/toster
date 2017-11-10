@@ -9,4 +9,4 @@ tests/_output/*
 *.sublime-workspace
 .vscode/
 bower_components/
-storage/database.sql
+storage/database.sqlite
