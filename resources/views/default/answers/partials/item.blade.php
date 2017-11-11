@@ -26,14 +26,15 @@
 				<button class="btn btn_share icon-share"></button></a>
 			</div>
 		</div>
-		<div class="answer__comments">
-            <ul class="list-content list-content_comments" id="comments_list_{{ $answer->id }}">
+		<div class="answer__comments active">
+			<comment-list :data="{{ $answer->comments }}"></comment-list>
+            {{--  <ul class="list-content list-content_comments" id="comments_list_{{ $answer->id }}">
 
             	@each('comments.show', $answer->comments, 'comment')
 
             	@include('comments.form', ['typeId' => $answer->id, 'commentType' => 'answer'])
             	
-            </ul>
+            </ul>  --}}
         </div>
 	</div>
 </li>

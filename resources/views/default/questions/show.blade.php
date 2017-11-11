@@ -59,7 +59,8 @@
 						<button class="btn btn_share icon-share"></button>
 					</div>
 				</div>
-				<div class="answer__comments">
+				<div class="answer__comments active">
+				
 					{{--  <ul class="list-content list-content_comments">
 
 						@each('comments.show', $question->comments, 'comment')
@@ -67,7 +68,9 @@
 						@include('comments.form', ['typeId' => $question->id, 'commentType' => 'question'])
 						
 					</ul>  --}}
-					<comment-list :data="{{ $question->comments }}"></comment-list>
+					<comment-list :data="{{ $question->comments }}"
+								  :commentType="question"
+								  :typeId="{{ $question->id }}"></comment-list>
 				</div>
 			</div>
 			<div class="question__additional" id="answers">

@@ -17,10 +17,10 @@
 				<button class="btn btn_share icon-share"></button></a>
 			</div>
 		</div>
-		<div class="answer__comments">
+		<div class="answer__comments active">
             <ul class="list-content list-content_comments">
-
-            	@each('comments.show', $answer->comments, 'comment')
+				<comment-list :data={{ $answer->comments }}"</comment-list>></comment-list>
+            	{{--  @each('comments.show', $answer->comments, 'comment')  --}}
             	
             </ul>
         </div>

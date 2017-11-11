@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ theme('css/style.css') }}">
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script>
-        window.Laravel = <?php echo json_encode([
+        window.App = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>

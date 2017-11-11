@@ -1,39 +1,23 @@
 <template>
     <ul class="list-content list-content_comments">
-        <li v-for="comment in comments" :key="comment.id" class="list-content__item comment">
-            <div class="comment__header">
-                <div class="user-summary user-summary_comment">
-                    <!-- @include('users.partials.summary-comment', ['user' => $comment->user]) -->
-                </div>
-            </div>
-            <div class="comment__body">
-                <div class="comment__body_inner">
-                    <div class="comment__text">{{ comment.body }}</div>
-                    <div class="comment__date">Написано {{ comment.created_at }}</div>
-                    <div class="button-group button-group_comment"><a href="#" class="btn_answer">Ответить</a>
-                        <div class="dropdown dropdown_settings">
-                            <button class="btn btn_settings btn_dott"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </li>
-
-						<!-- @each('comments.show', $question->comments, 'comment')
-
-						@include('comments.form', ['typeId' => $question->id, 'commentType' => 'question']) -->
-						
+        <div v-for="comment in comments" :key="comment.id">
+            <comment :data="comment"></comment>
+        </div>
+        <comment-form :commentType="this.commentType" :typeId="typeId"></comment-form>
 	</ul>
 </template>
 
 <script>
+import Comment from './Comment.vue';
+import CommentForm from './CommentForm.vue';
+
 export default {
-    props: ['data'],
+    components: {Comment, CommentForm},
+    props: ['data', 'commentType', 'typeId'],
     data () {
         return {
             comments: this.data
         }
     }
-
 }
 </script>

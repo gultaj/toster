@@ -22,7 +22,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	protected $casts = [
         'is_admin' => 'boolean',
-    ];
+	];
+	
+	protected $appends = ['full_name', 'profile_url', 'avatar_url'];
 
 	/**
 	 * The attributes that are mass assignable.
@@ -71,6 +73,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	public function setAvatarAttribute()
 	{
 		$this->attributes['avatar'] = 'img/user1.png';
+	}
+
+	public function getProfileUrlAttribute()
+	{
+		return route('user', ['nickname' => $this->nickname]);
+	}
+
+	public function getAvatarUrlAttribute()
+	{
+		return url($this->avatar);
 	}
 
 	public function getFullNameAttribute()
